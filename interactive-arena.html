@@ -1,0 +1,3064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Pro Gym | Mahavir Enclave, Delhi · 5.0★</title>
+  <meta name="description" content="Golden Pro Gym in Mahavir Enclave, Delhi. 5.0 Google Rating with 14 reviews. Premier strength, cardio, and performance gym open daily until 10 PM IST. Book your free trial today.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & TOKENS
+       Warm charcoal, concrete mid-tones, bone, ONE accent gold (#D4A017)
+       Thick 3px outlines, hard crisp shadows, strictly no blur / glass / neon.
+       ========================================================================== */
+    :root {
+      --bg-charcoal: #0E0D0B;
+      --bg-charcoal-light: #161513;
+      --bg-surface: #1E1D1A;
+      --bg-card: #252420;
+
+      --concrete-100: #EDE8DC; /* Bone */
+      --concrete-200: #D8D2C2;
+      --concrete-300: #A8A294;
+      --concrete-400: #6B665C;
+      --concrete-500: #423F39;
+      --concrete-600: #2B2925;
+
+      --gold: #D4A017;
+      --gold-light: #E8B428;
+      --gold-dark: #A67C0E;
+      --gold-soft: rgba(212, 160, 23, 0.15);
+
+      --bone: #EDE8DC;
+      --bone-pure: #FAF7F0;
+      --ink: #0E0D0B;
+
+      --font-display: 'Bebas Neue', 'Impact', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+      --hard-shadow-sm: 3px 3px 0px var(--ink);
+      --hard-shadow: 5px 5px 0px var(--ink);
+      --hard-shadow-lg: 8px 8px 0px var(--ink);
+      --hard-shadow-gold: 4px 4px 0px var(--gold-dark);
+
+      --border-heavy: 3px solid var(--ink);
+      --border-mid: 2px solid var(--ink);
+      --border-gold: 3px solid var(--gold);
+    }
+
+    /* Reset & Base Setup */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-charcoal);
+      color: var(--bone);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.4;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* Accessibility focus styles */
+    :focus-visible {
+      outline: 3px solid var(--gold) !important;
+      outline-offset: 3px !important;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ==========================================================================
+       HERO CONTAINER LAYOUT
+       ========================================================================== */
+    .hero-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-charcoal);
+      overflow: hidden;
+    }
+
+    /* Top Brand & Utility Bar */
+    .top-bar {
+      position: relative;
+      z-index: 40;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 28px;
+      background: var(--bg-charcoal-light);
+      border-bottom: var(--border-heavy);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border: var(--border-mid);
+      box-shadow: var(--hard-shadow-sm);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--concrete-300);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-meta strong {
+      color: var(--bone);
+      font-weight: 700;
+    }
+
+    .status-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-surface);
+      border: 2px solid var(--concrete-500);
+      padding: 4px 10px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--bone);
+    }
+
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34d399; /* Live open green */
+    }
+
+    .status-indicator.closed {
+      background: #f87171;
+    }
+
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bone);
+      color: var(--ink);
+      border: var(--border-mid);
+      padding: 4px 10px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 2px 2px 0px var(--gold-dark);
+    }
+
+    .rating-stars {
+      color: var(--gold-dark);
+      letter-spacing: 1px;
+    }
+
+    .top-phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      background: var(--bg-surface);
+      border: 2px solid var(--gold);
+      padding: 5px 12px;
+      transition: transform 0.1s ease, background 0.1s ease;
+    }
+
+    .top-phone-link:hover {
+      background: var(--gold);
+      color: var(--ink);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--hard-shadow-sm);
+    }
+
+    /* ==========================================================================
+       HERO EDITORIAL HEADER (Headline, Sub-line, CTAs)
+       Positioned cleanly above and around the living scene
+       ========================================================================== */
+    .hero-header {
+      position: relative;
+      z-index: 30;
+      padding: 24px 32px 12px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      pointer-events: none; /* Let clicks pass through empty spaces to SVG */
+    }
+
+    .hero-header * {
+      pointer-events: auto; /* Re-enable clicks on interactive buttons and text */
+    }
+
+    .hero-title-col {
+      max-width: 720px;
+    }
+
+    .hero-subhead-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-soft);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 8vw, 108px);
+      line-height: 0.88;
+      letter-spacing: 1px;
+      color: var(--bone);
+      text-transform: uppercase;
+      transition: letter-spacing 0.2s ease;
+      user-select: none;
+    }
+
+    .hero-title .gold-accent {
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      margin-top: 8px;
+      font-size: clamp(15px, 1.6vw, 19px);
+      font-weight: 600;
+      color: var(--concrete-200);
+      max-width: 520px;
+      letter-spacing: -0.2px;
+    }
+
+    .hero-subtitle strong {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* CTA & HUD Actions Group */
+    .hero-actions-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 14px;
+    }
+
+    .cta-btn-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 24px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: var(--border-heavy);
+      box-shadow: var(--hard-shadow);
+      transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.15s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px var(--ink);
+      background: var(--gold-light);
+    }
+
+    .btn-primary:active {
+      transform: translate(1px, 1px);
+      box-shadow: 2px 2px 0px var(--ink);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: var(--bg-surface);
+      color: var(--bone);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: var(--border-heavy);
+      box-shadow: var(--hard-shadow);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--concrete-500);
+      color: var(--bone-pure);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--ink);
+    }
+
+    /* Live HUD Bar (Ticking Rep Counter & Quick Mode) */
+    .hud-stats-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--bg-charcoal-light);
+      border: var(--border-mid);
+      padding: 8px 16px;
+      box-shadow: var(--hard-shadow-sm);
+    }
+
+    .hud-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hud-stat-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--concrete-300);
+    }
+
+    .hud-stat-value {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
+
+    .hud-stat-value.tick-anim {
+      animation: statTick 0.15s ease-out;
+    }
+
+    @keyframes statTick {
+      0% { transform: scale(1.15); color: #FFF; }
+      100% { transform: scale(1); color: var(--gold); }
+    }
+
+    /* ==========================================================================
+       THE LIVING FLOOR: 2400x860 GAME-LEVEL SVG ARENA
+       ========================================================================== */
+    .arena-viewport {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      min-height: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      user-select: none;
+      background: #0E0D0B;
+    }
+
+    .arena-scene-stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-origin: 50% 60%;
+      transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+      will-change: transform;
+    }
+
+    #gym-svg-canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.6));
+    }
+
+    /* SVG Interactive Station Groups */
+    .svg-station-zone {
+      cursor: pointer;
+      outline: none;
+    }
+
+    .svg-station-zone:hover .equipment-highlight,
+    .svg-station-zone:focus-visible .equipment-highlight {
+      stroke: var(--gold) !important;
+      stroke-width: 4px !important;
+      filter: drop-shadow(0 0 6px rgba(212, 160, 23, 0.7));
+    }
+
+    .svg-station-zone:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 6px;
+    }
+
+    /* ==========================================================================
+       HOVER INSPECTION CARD & TOOLTIP
+       ========================================================================== */
+    .station-tooltip {
+      position: absolute;
+      z-index: 60;
+      pointer-events: none;
+      background: var(--ink);
+      color: var(--bone);
+      border: 3px solid var(--gold);
+      box-shadow: 6px 6px 0px #000;
+      padding: 12px 18px;
+      max-width: 320px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-50%, -100%) scale(0.95);
+      transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+    }
+
+    .station-tooltip.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -100%) scale(1);
+      pointer-events: auto;
+    }
+
+    .station-tooltip::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: var(--gold) transparent;
+      display: block;
+      width: 0;
+    }
+
+    .tt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .tt-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .tt-badge {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      background: var(--bg-surface);
+      color: var(--concrete-200);
+      padding: 2px 6px;
+      border: 1px solid var(--concrete-500);
+    }
+
+    .tt-muscles {
+      font-size: 11px;
+      color: var(--concrete-200);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .tt-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ==========================================================================
+       DRAGGABLE PLATES DOCK (Interactive Weight Loading)
+       ========================================================================== */
+    .plate-dock-container {
+      position: absolute;
+      bottom: 24px;
+      left: 32px;
+      z-index: 45;
+      background: var(--bg-charcoal-light);
+      border: var(--border-heavy);
+      box-shadow: var(--hard-shadow);
+      padding: 12px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 380px;
+    }
+
+    .dock-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--concrete-500);
+      padding-bottom: 6px;
+    }
+
+    .dock-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--concrete-200);
+      letter-spacing: 0.5px;
+    }
+
+    .dock-weight-readout {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .dock-plates-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .drag-plate-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: var(--concrete-600);
+      color: var(--bone);
+      border: 3px solid var(--ink);
+      box-shadow: var(--hard-shadow-sm);
+      border-radius: 50%;
+      cursor: grab;
+      user-select: none;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s;
+    }
+
+    .drag-plate-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 4px 4px 0px var(--gold-dark);
+      border-color: var(--gold);
+    }
+
+    .drag-plate-item:active {
+      cursor: grabbing;
+      transform: scale(0.95);
+    }
+
+    .plate-20kg { width: 62px; height: 62px; background: #1a1917; border-color: var(--gold); }
+    .plate-15kg { width: 54px; height: 54px; background: #252320; }
+    .plate-10kg { width: 48px; height: 48px; background: #33302a; }
+    .plate-5kg  { width: 42px; height: 42px; background: #47433c; }
+
+    .plate-weight-num {
+      font-family: var(--font-display);
+      font-size: 16px;
+      line-height: 1;
+      color: var(--bone);
+    }
+
+    .plate-unit {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: var(--concrete-300);
+      line-height: 1;
+    }
+
+    .dock-controls-sub {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .dock-hint {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      color: var(--concrete-300);
+    }
+
+    .btn-reset-plates {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--concrete-300);
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border: 1px solid var(--concrete-500);
+      background: var(--bg-surface);
+      cursor: pointer;
+    }
+
+    .btn-reset-plates:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* Too heavy joke banner */
+    .joke-banner {
+      display: none;
+      background: var(--gold);
+      color: var(--ink);
+      padding: 6px 10px;
+      border: 2px solid var(--ink);
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 4px;
+      animation: shake 0.3s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+
+    /* ==========================================================================
+       BOTTOM STATION NAVIGATOR & HUD CONTROLS
+       ========================================================================== */
+    .bottom-hud-bar {
+      position: relative;
+      z-index: 40;
+      width: 100%;
+      background: var(--bg-charcoal-light);
+      border-top: var(--border-heavy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 28px;
+    }
+
+    .station-nav-list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .station-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-surface);
+      color: var(--concrete-200);
+      border: 2px solid var(--concrete-500);
+      padding: 6px 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .station-nav-btn:hover {
+      background: var(--concrete-600);
+      color: var(--bone);
+      border-color: var(--gold);
+    }
+
+    .station-nav-btn.active {
+      background: var(--gold);
+      color: var(--ink);
+      border-color: var(--ink);
+      box-shadow: 2px 2px 0px var(--ink);
+      font-weight: 700;
+    }
+
+    .hud-toggles-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hud-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--concrete-300);
+      background: var(--bg-surface);
+      border: 1px solid var(--concrete-500);
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .hud-toggle-btn:hover {
+      color: var(--bone);
+      border-color: var(--concrete-300);
+    }
+
+    /* ==========================================================================
+       FORM DEMO ZOOM MODAL / DRAWER
+       Appears when visitor zooms into any machine
+       ========================================================================== */
+    .form-demo-panel {
+      position: absolute;
+      top: 90px;
+      right: 32px;
+      z-index: 55;
+      width: 360px;
+      background: var(--bg-charcoal);
+      border: var(--border-heavy);
+      box-shadow: var(--hard-shadow-lg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(40px);
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+    }
+
+    .form-demo-panel.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    .demo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid var(--concrete-500);
+      padding-bottom: 10px;
+    }
+
+    .demo-station-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .demo-station-name {
+      font-family: var(--font-display);
+      font-size: 26px;
+      letter-spacing: 1px;
+      color: var(--bone);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .btn-close-demo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--bg-surface);
+      color: var(--bone);
+      border: 2px solid var(--ink);
+      box-shadow: 2px 2px 0px var(--ink);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-close-demo:hover {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .demo-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-soft);
+      border: 1px solid var(--gold);
+      padding: 4px 10px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .demo-cues-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .demo-cue-item {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--concrete-200);
+      line-height: 1.4;
+    }
+
+    .cue-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      border: 1px solid var(--ink);
+    }
+
+    .demo-actions-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .btn-demo-back {
+      flex: 1;
+      padding: 10px;
+      background: var(--bg-surface);
+      color: var(--bone);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 2px solid var(--ink);
+      box-shadow: var(--hard-shadow-sm);
+      text-align: center;
+    }
+
+    .btn-demo-back:hover {
+      background: var(--concrete-500);
+    }
+
+    .btn-demo-book {
+      flex: 1;
+      padding: 10px;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      border: 2px solid var(--ink);
+      box-shadow: var(--hard-shadow-sm);
+      text-align: center;
+    }
+
+    .btn-demo-book:hover {
+      background: var(--gold-light);
+    }
+
+    /* ==========================================================================
+       CHALK PUFF CANVAS & PARTICLES
+       ========================================================================== */
+    #chalk-particle-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 35;
+    }
+
+    /* Toast Notification for Easter Eggs */
+    .game-toast {
+      position: fixed;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      z-index: 99;
+      background: var(--gold);
+      color: var(--ink);
+      border: var(--border-heavy);
+      box-shadow: var(--hard-shadow);
+      padding: 10px 20px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+
+    .game-toast.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ==========================================================================
+       MOBILE RESPONSIVENESS & STICKY CTA (Down to 360px)
+       ========================================================================== */
+    .mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 80;
+      background: var(--bg-charcoal);
+      border-top: var(--border-heavy);
+      padding: 10px 16px;
+      gap: 10px;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 992px) {
+      .top-bar {
+        padding: 10px 16px;
+      }
+      .brand-meta {
+        display: none;
+      }
+      .hero-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 20px;
+        gap: 16px;
+      }
+      .hero-actions-col {
+        align-items: flex-start;
+        width: 100%;
+      }
+      .cta-btn-group {
+        width: 100%;
+      }
+      .btn-primary, .btn-secondary {
+        flex: 1;
+      }
+      .plate-dock-container {
+        left: 16px;
+        bottom: 70px;
+        max-width: 320px;
+        padding: 8px 12px;
+      }
+      .form-demo-panel {
+        right: 16px;
+        left: 16px;
+        width: auto;
+        top: 70px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .status-group .badge-pill:first-child {
+        display: none;
+      }
+      .hero-title {
+        font-size: 48px;
+      }
+      .hero-subtitle {
+        font-size: 14px;
+      }
+      .arena-viewport {
+        min-height: 420px;
+      }
+      .cta-btn-group {
+        display: none; /* Relies on sticky bottom bar on mobile */
+      }
+      .mobile-sticky-bar {
+        display: flex;
+      }
+      .bottom-hud-bar {
+        padding-bottom: 74px; /* Space for sticky bar */
+      }
+      .plate-dock-container {
+        display: none; /* Simplified on narrow mobile to keep scene clear */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Reader Live Floor Summary -->
+  <div class="sr-only" aria-live="polite" id="a11y-summary">
+    Golden Pro Gym interactive vector scene. Five athletic stations from left to right: Squat Rack, Bench Press, Treadmill Runner, Rig Pull-ups and Battle Ropes, and Free Weights Dumbbell and Kettlebell Corner. Use Tab to navigate between stations and Enter to inspect form cues.
+  </div>
+
+  <div class="hero-wrapper" id="hero-app">
+
+    <!-- Top Utility & Information Bar -->
+    <header class="top-bar">
+      <div class="brand-group">
+        <a href="#hero-app" class="brand-logo-badge" aria-label="Golden Pro Gym Home">
+          <span>GOLDEN PRO</span>
+        </a>
+        <div class="brand-meta">
+          <span><strong>MAHAVIR ENCLAVE</strong> · PALAM ROAD, NEW DELHI</span>
+          <span>5.0 GOOGLE RATING · PURE IRON GYM</span>
+        </div>
+      </div>
+
+      <div class="status-group">
+        <div class="badge-pill" id="badge-clock" title="Real-time Indian Standard Time">
+          <span id="ist-time-text">--:-- -- IST</span>
+        </div>
+
+        <div class="badge-pill" id="badge-open-status">
+          <span class="status-indicator" id="status-dot"></span>
+          <span id="status-text">OPEN NOW · CLOSES 10 PM</span>
+        </div>
+
+        <div class="rating-badge" title="Google Maps 5.0 Rating based on 14 reviews">
+          <span class="rating-stars">★★★★★</span>
+          <span>5.0 (14 REVIEWS)</span>
+        </div>
+
+        <a href="tel:09717808212" class="top-phone-link" aria-label="Call Golden Pro Gym at 097178 08212">
+          <span>097178 08212</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Editorial Hero Overlay -->
+    <section class="hero-header" aria-label="Hero Introduction">
+      <div class="hero-title-col">
+        <div class="hero-subhead-pill">
+          <span>STRENGTH & CONDITIONING · DELHI 110059</span>
+        </div>
+        <h1 class="hero-title" id="interactive-title">
+          GOLDEN PRO <span class="gold-accent">GYM</span>
+        </h1>
+        <p class="hero-subtitle">
+          Mahavir Enclave’s authentic iron. Five dedicated lifting zones, competition barbells, and coaches who know form. <strong>Open daily till 10 PM.</strong>
+        </p>
+      </div>
+
+      <div class="hero-actions-col">
+        <div class="cta-btn-group">
+          <button class="btn-primary" id="btn-trial-desktop" aria-label="Book a free workout trial">
+            <span>Book a Free Trial</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <a href="https://wa.me/919717808212?text=Hi%20Golden%20Pro%20Gym%2C%20I%20would%20like%20to%20book%20a%20free%20trial%20session." 
+             target="_blank" rel="noopener noreferrer" 
+             class="btn-secondary" id="btn-whatsapp-desktop" aria-label="WhatsApp Golden Pro Gym">
+            <span>WhatsApp Us</span>
+          </a>
+        </div>
+
+        <!-- Live Global HUD -->
+        <div class="hud-stats-bar">
+          <div class="hud-stat-item">
+            <span class="hud-stat-label">Reps Logged Today</span>
+            <span class="hud-stat-value" id="global-reps-counter">14,892</span>
+          </div>
+          <div style="width: 1px; height: 24px; background: var(--concrete-500);"></div>
+          <div class="hud-stat-item">
+            <span class="hud-stat-label">Floor Energy</span>
+            <span class="hud-stat-value" id="floor-energy-val">98% PEAK</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Living Arena Viewport -->
+    <main class="arena-viewport" id="viewport-bounds" aria-label="Interactive Gym Floor Model">
+      <div class="arena-scene-stage" id="scene-stage">
+        
+        <!-- The Master Rigged SVG Vector Level (2400 x 860) -->
+        <svg id="gym-svg-canvas" viewBox="0 0 2400 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wide cutaway view of Golden Pro Gym floor with 5 training athletes">
+          
+          <defs>
+            <!-- Concrete Halftone Dot Texture -->
+            <pattern id="concrete-halftone" width="20" height="20" patternUnits="userSpaceOnUse">
+              <rect width="20" height="20" fill="#141311" />
+              <circle cx="10" cy="10" r="1.5" fill="#24221E" />
+            </pattern>
+
+            <!-- Rubber Mat Grid Texture -->
+            <pattern id="rubber-mat-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+              <rect width="40" height="40" fill="#0A0908" />
+              <line x1="0" y1="40" x2="40" y2="40" stroke="#161512" stroke-width="2" />
+              <line x1="40" y1="0" x2="40" y2="40" stroke="#161512" stroke-width="2" />
+              <!-- Mat texture dots -->
+              <circle cx="10" cy="10" r="1" fill="#1C1B17" />
+              <circle cx="30" cy="30" r="1" fill="#1C1B17" />
+            </pattern>
+
+            <!-- Mirror Diagonal Shimmer Gradient -->
+            <linearGradient id="mirror-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1B1A17" />
+              <stop offset="45%" stop-color="#24221D" />
+              <stop offset="50%" stop-color="#3A3832" />
+              <stop offset="55%" stop-color="#24221D" />
+              <stop offset="100%" stop-color="#181714" />
+            </linearGradient>
+
+            <!-- Overhead Spotlight Light Cone Gradient -->
+            <linearGradient id="spotlight-beam" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#D4A017" stop-opacity="0.12" />
+              <stop offset="100%" stop-color="#D4A017" stop-opacity="0.0" />
+            </linearGradient>
+
+            <!-- Clip path for Mirror Frame -->
+            <clipPath id="mirror-clip">
+              <rect x="520" y="240" width="340" height="460" rx="4" />
+            </clipPath>
+
+            <!-- Base 3px Vector Stroke Preset -->
+            <style>
+              .vec-stroke { stroke: #0E0D0B; stroke-width: 3px; stroke-linecap: round; stroke-linejoin: round; }
+              .vec-stroke-heavy { stroke: #0E0D0B; stroke-width: 4px; stroke-linecap: round; stroke-linejoin: round; }
+              .vec-stroke-gold { stroke: #D4A017; stroke-width: 3px; stroke-linecap: round; stroke-linejoin: round; }
+            </style>
+          </defs>
+
+          <!-- ================================================================
+               LAYER 1: BACK WALL & ARCHITECTURE (Parallax Depth: 0.02)
+               ================================================================ -->
+          <g id="layer-back-wall" class="parallax-layer" data-speed="0.02">
+            <!-- Concrete Wall with Halftone Texture -->
+            <rect x="0" y="0" width="2400" height="720" fill="url(#concrete-halftone)" />
+
+            <!-- Industrial Horizontal Steel Girders & Expansion Seams -->
+            <line x1="0" y1="200" x2="2400" y2="200" stroke="#1E1C18" stroke-width="4" />
+            <line x1="0" y1="440" x2="2400" y2="440" stroke="#1E1C18" stroke-width="4" />
+            
+            <!-- High Industrial Clerestory Windows -->
+            <g id="clerestory-windows">
+              <!-- Window 1 -->
+              <rect x="180" y="40" width="220" height="110" fill="#1D1A14" stroke="#0E0D0B" stroke-width="4" />
+              <line x1="290" y1="40" x2="290" y2="150" stroke="#0E0D0B" stroke-width="3" />
+              <line x1="180" y1="95" x2="400" y2="95" stroke="#0E0D0B" stroke-width="3" />
+              <!-- Window 2 -->
+              <rect x="1080" y="40" width="240" height="110" fill="#1D1A14" stroke="#0E0D0B" stroke-width="4" />
+              <line x1="1200" y1="40" x2="1200" y2="150" stroke="#0E0D0B" stroke-width="3" />
+              <line x1="1080" y1="95" x2="1320" y2="95" stroke="#0E0D0B" stroke-width="3" />
+              <!-- Window 3 -->
+              <rect x="1980" y="40" width="220" height="110" fill="#1D1A14" stroke="#0E0D0B" stroke-width="4" />
+              <line x1="2090" y1="40" x2="2090" y2="150" stroke="#0E0D0B" stroke-width="3" />
+              <line x1="1980" y1="95" x2="2200" y2="95" stroke="#0E0D0B" stroke-width="3" />
+            </g>
+
+            <!-- Wall Mounted Heavy Metal "GOLDEN PRO" Plate Sign -->
+            <g id="wall-gym-sign" style="cursor: pointer;">
+              <!-- Plate backer -->
+              <rect x="940" y="180" width="520" height="74" fill="#161512" stroke="#D4A017" stroke-width="3" rx="3" />
+              <!-- Hard shadow bevel -->
+              <rect x="946" y="248" width="514" height="6" fill="#0E0D0B" />
+              <text x="1200" y="232" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="44" letter-spacing="6" fill="#EDE8DC" font-weight="700">
+                GOLDEN PRO GYM
+              </text>
+              <text x="1200" y="248" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="2" fill="#D4A017" font-weight="700">
+                MAHAVIR ENCLAVE · EST. DELHI
+              </text>
+            </g>
+
+            <!-- Wall Clock with Real IST Time (Click Easter Egg!) -->
+            <g id="wall-clock" style="cursor: pointer;" transform="translate(820, 100)">
+              <!-- Clock casing -->
+              <circle cx="0" cy="0" r="42" fill="#1A1815" stroke="#EDE8DC" stroke-width="3" />
+              <circle cx="0" cy="0" r="38" fill="#EDE8DC" />
+              <!-- Clock markers -->
+              <line x1="0" y1="-34" x2="0" y2="-28" stroke="#0E0D0B" stroke-width="3" stroke-linecap="round" />
+              <line x1="0" y1="34" x2="0" y2="28" stroke="#0E0D0B" stroke-width="3" stroke-linecap="round" />
+              <line x1="-34" y1="0" x2="-28" y2="0" stroke="#0E0D0B" stroke-width="3" stroke-linecap="round" />
+              <line x1="34" y1="0" x2="28" y2="0" stroke="#0E0D0B" stroke-width="3" stroke-linecap="round" />
+              <text x="0" y="16" text-anchor="middle" font-family="'JetBrains Mono'" font-size="7" font-weight="700" fill="#6B665C">IST</text>
+              <!-- Clock Hands (Animated in JS) -->
+              <line id="clock-hour-hand" x1="0" y1="0" x2="0" y2="-18" stroke="#0E0D0B" stroke-width="3" stroke-linecap="round" />
+              <line id="clock-min-hand" x1="0" y1="0" x2="0" y2="-26" stroke="#0E0D0B" stroke-width="2.5" stroke-linecap="round" />
+              <line id="clock-sec-hand" x1="0" y1="4" x2="0" y2="-30" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round" />
+              <circle cx="0" cy="0" r="3" fill="#D4A017" stroke="#0E0D0B" stroke-width="1" />
+            </g>
+
+            <!-- Commercial Large Wall Mirror (Behind Bench Area) -->
+            <g id="wall-mirror">
+              <rect x="520" y="240" width="340" height="460" rx="4" fill="url(#mirror-grad)" stroke="#0E0D0B" stroke-width="4" />
+              <!-- Mirror Shimmer Reflection Lines -->
+              <g clip-path="url(#mirror-clip)">
+                <line id="mirror-glint-1" x1="480" y1="720" x2="780" y2="220" stroke="#EDE8DC" stroke-width="2" stroke-opacity="0.25" />
+                <line id="mirror-glint-2" x1="560" y1="720" x2="860" y2="220" stroke="#EDE8DC" stroke-width="1" stroke-opacity="0.15" />
+              </g>
+            </g>
+
+            <!-- Overhead Pendant Lamps with Light Cones -->
+            <g id="pendant-lamps">
+              <!-- Lamp 1 (Over Squat) -->
+              <line x1="320" y1="0" x2="320" y2="120" stroke="#0E0D0B" stroke-width="3" />
+              <polygon points="300,140 340,140 328,120 312,120" fill="#252420" stroke="#0E0D0B" stroke-width="2" />
+              <polygon points="160,720 480,720 338,140 302,140" fill="url(#spotlight-beam)" opacity="0.8" />
+              <!-- Lamp 2 (Over Bench) -->
+              <line x1="740" y1="0" x2="740" y2="120" stroke="#0E0D0B" stroke-width="3" />
+              <polygon points="720,140 760,140 748,120 732,120" fill="#252420" stroke="#0E0D0B" stroke-width="2" />
+              <polygon points="580,720 900,720 758,140 722,140" fill="url(#spotlight-beam)" opacity="0.8" />
+              <!-- Lamp 3 (Over Treadmill) -->
+              <line x1="1180" y1="0" x2="1180" y2="120" stroke="#0E0D0B" stroke-width="3" />
+              <polygon points="1160,140 1200,140 1188,120 1172,120" fill="#252420" stroke="#0E0D0B" stroke-width="2" />
+              <polygon points="1020,720 1340,720 1198,140 1162,140" fill="url(#spotlight-beam)" opacity="0.8" />
+              <!-- Lamp 4 (Over Pullup Rig) -->
+              <line x1="1640" y1="0" x2="1640" y2="120" stroke="#0E0D0B" stroke-width="3" />
+              <polygon points="1620,140 1660,140 1648,120 1632,120" fill="#252420" stroke="#0E0D0B" stroke-width="2" />
+              <polygon points="1480,720 1800,720 1658,140 1622,140" fill="url(#spotlight-beam)" opacity="0.8" />
+              <!-- Lamp 5 (Over Dumbbell Area) -->
+              <line x1="2120" y1="0" x2="2120" y2="120" stroke="#0E0D0B" stroke-width="3" />
+              <polygon points="2100,140 2140,140 2128,120 2112,120" fill="#252420" stroke="#0E0D0B" stroke-width="2" />
+              <polygon points="1960,720 2280,720 2138,140 2102,140" fill="url(#spotlight-beam)" opacity="0.8" />
+            </g>
+          </g>
+
+
+          <!-- ================================================================
+               LAYER 2: GYM FLOOR & BOUNDARY BASE (Y: 715 - 860)
+               ================================================================ -->
+          <g id="layer-floor-base">
+            <!-- Rubber Mat Flooring -->
+            <rect x="0" y="715" width="2400" height="145" fill="url(#rubber-mat-pattern)" />
+            <!-- Safety Gold Stripe on Floor -->
+            <rect x="0" y="715" width="2400" height="6" fill="#D4A017" stroke="#0E0D0B" stroke-width="1.5" />
+            <!-- Heavy Floor Skirting Wall Seam -->
+            <line x1="0" y1="715" x2="2400" y2="715" stroke="#0E0D0B" stroke-width="4" />
+          </g>
+
+
+          <!-- ================================================================
+               LAYER 3: EQUIPMENT FRAMES & APPARATUS (Parallax: 0.05)
+               ================================================================ -->
+          <g id="layer-equipment-mid" class="parallax-layer" data-speed="0.05">
+
+            <!-- -------------------------------------------------------------
+                 STATION 1 FRAME: HEAVY DUTY POWER CAGE (X: 180 - 460)
+                 ------------------------------------------------------------- -->
+            <g id="eq-squat-rack" class="equipment-group">
+              <!-- Upright Posts (4 box tubes) -->
+              <rect class="equipment-highlight" x="200" y="240" width="22" height="475" fill="#1C1A17" stroke="#0E0D0B" stroke-width="3" />
+              <rect class="equipment-highlight" x="238" y="240" width="18" height="475" fill="#24221E" stroke="#0E0D0B" stroke-width="3" />
+              <rect class="equipment-highlight" x="384" y="240" width="18" height="475" fill="#24221E" stroke="#0E0D0B" stroke-width="3" />
+              <rect class="equipment-highlight" x="418" y="240" width="22" height="475" fill="#1C1A17" stroke="#0E0D0B" stroke-width="3" />
+
+              <!-- Laser Cut Peg Holes on Uprights -->
+              <g fill="#0E0D0B">
+                <circle cx="211" cy="300" r="3" /><circle cx="211" cy="340" r="3" /><circle cx="211" cy="380" r="3" />
+                <circle cx="211" cy="420" r="3" /><circle cx="211" cy="460" r="3" /><circle cx="211" cy="500" r="3" />
+                <circle cx="211" cy="540" r="3" /><circle cx="211" cy="580" r="3" /><circle cx="211" cy="620" r="3" />
+
+                <circle cx="429" cy="300" r="3" /><circle cx="429" cy="340" r="3" /><circle cx="429" cy="380" r="3" />
+                <circle cx="429" cy="420" r="3" /><circle cx="429" cy="460" r="3" /><circle cx="429" cy="500" r="3" />
+                <circle cx="429" cy="540" r="3" /><circle cx="429" cy="580" r="3" /><circle cx="429" cy="620" r="3" />
+              </g>
+
+              <!-- Top Crossbars & Pull-up arch -->
+              <rect x="195" y="235" width="250" height="18" fill="#181614" stroke="#0E0D0B" stroke-width="3" rx="2" />
+              <line x1="200" y1="280" x2="440" y2="280" stroke="#0E0D0B" stroke-width="6" stroke-linecap="round" />
+
+              <!-- J-Hooks (Gold adjustment hardware) -->
+              <path d="M 238,470 L 255,470 L 255,482 L 238,482 Z" fill="#D4A017" stroke="#0E0D0B" stroke-width="2" />
+              <path d="M 384,470 L 401,470 L 401,482 L 384,482 Z" fill="#D4A017" stroke="#0E0D0B" stroke-width="2" />
+
+              <!-- Safety Spotter Arms (At Y: 580) -->
+              <rect x="200" y="580" width="240" height="14" fill="#2E2B26" stroke="#0E0D0B" stroke-width="3" rx="2" />
+              <!-- Bottom Floor Mounting Feet -->
+              <rect x="180" y="710" width="70" height="12" fill="#161513" stroke="#0E0D0B" stroke-width="3" />
+              <rect x="390" y="710" width="70" height="12" fill="#161513" stroke="#0E0D0B" stroke-width="3" />
+            </g>
+
+            <!-- -------------------------------------------------------------
+                 STATION 2 FRAME: COMPETITION BENCH PRESS (X: 580 - 900)
+                 ------------------------------------------------------------- -->
+            <g id="eq-bench-rack" class="equipment-group">
+              <!-- Upright Bench Posts -->
+              <rect class="equipment-highlight" x="650" y="380" width="18" height="335" fill="#22201C" stroke="#0E0D0B" stroke-width="3" />
+              <rect class="equipment-highlight" x="830" y="380" width="18" height="335" fill="#22201C" stroke="#0E0D0B" stroke-width="3" />
+              <!-- J-Hooks on Bench -->
+              <polygon points="646,470 668,470 668,486 646,486" fill="#D4A017" stroke="#0E0D0B" stroke-width="2" />
+              <polygon points="826,470 848,470 848,486 826,486" fill="#D4A017" stroke="#0E0D0B" stroke-width="2" />
+
+              <!-- Heavy Steel Bench Base Frame -->
+              <line x1="620" y1="715" x2="860" y2="715" stroke="#0E0D0B" stroke-width="10" stroke-linecap="square" />
+              <rect x="670" y="620" width="160" height="16" fill="#1C1A17" stroke="#0E0D0B" stroke-width="3" />
+              <!-- High-density Vinyl Bench Pad (Charcoal with Bone Accent) -->
+              <rect class="equipment-highlight" x="660" y="605" width="180" height="18" rx="4" fill="#0E0D0B" stroke="#D4A017" stroke-width="2" />
+            </g>
+
+            <!-- -------------------------------------------------------------
+                 STATION 3 FRAME: COMMERCIAL TREADMILL (X: 1040 - 1340)
+                 ------------------------------------------------------------- -->
+            <g id="eq-treadmill" class="equipment-group">
+              <!-- Heavy Deck Base -->
+              <polygon class="equipment-highlight" points="1060,670 1310,670 1330,715 1040,715" fill="#1B1A17" stroke="#0E0D0B" stroke-width="4" />
+              <!-- Running Belt Recess -->
+              <rect x="1080" y="672" width="220" height="10" fill="#0E0D0B" />
+              <!-- Animated Treadmill Belt Texture lines -->
+              <g id="treadmill-belt-lines">
+                <line x1="1100" y1="677" x2="1120" y2="677" stroke="#EDE8DC" stroke-width="2" stroke-dasharray="6,8" />
+                <line x1="1140" y1="677" x2="1160" y2="677" stroke="#EDE8DC" stroke-width="2" stroke-dasharray="6,8" />
+                <line x1="1180" y1="677" x2="1200" y2="677" stroke="#EDE8DC" stroke-width="2" stroke-dasharray="6,8" />
+                <line x1="1220" y1="677" x2="1240" y2="677" stroke="#EDE8DC" stroke-width="2" stroke-dasharray="6,8" />
+                <line x1="1260" y1="677" x2="1280" y2="677" stroke="#EDE8DC" stroke-width="2" stroke-dasharray="6,8" />
+              </g>
+
+              <!-- Front Handrail & Console Upright Pillar -->
+              <path d="M 1290,670 L 1270,510 L 1200,510" fill="none" stroke="#0E0D0B" stroke-width="7" stroke-linecap="round" />
+              <path d="M 1290,670 L 1270,510 L 1200,510" fill="none" stroke="#2B2925" stroke-width="3" stroke-linecap="round" />
+              <!-- Console Pod -->
+              <rect class="equipment-highlight" x="1235" y="465" width="65" height="45" rx="3" fill="#141311" stroke="#0E0D0B" stroke-width="3" />
+              <!-- Digital Speed Display Screen (Gold digits) -->
+              <rect x="1242" y="472" width="50" height="20" fill="#0A0908" stroke="#D4A017" stroke-width="1.5" />
+              <text id="treadmill-speed-text" x="1267" y="487" text-anchor="middle" font-family="'JetBrains Mono'" font-size="11" font-weight="700" fill="#D4A017">
+                12.8
+              </text>
+              <text x="1267" y="502" text-anchor="middle" font-family="'JetBrains Mono'" font-size="6" fill="#A8A294">KM/H</text>
+            </g>
+
+            <!-- -------------------------------------------------------------
+                 STATION 4 FRAME: RIG PULL-UP & BATTLE ROPE ANCHOR (X: 1460 - 1820)
+                 ------------------------------------------------------------- -->
+            <g id="eq-rig" class="equipment-group">
+              <!-- Rig Uprights -->
+              <rect class="equipment-highlight" x="1480" y="220" width="22" height="495" fill="#1F1D1A" stroke="#0E0D0B" stroke-width="3" />
+              <rect class="equipment-highlight" x="1680" y="220" width="22" height="495" fill="#1F1D1A" stroke="#0E0D0B" stroke-width="3" />
+              <!-- High Pull-up Bar (Knurled steel) -->
+              <line x1="1470" y1="260" x2="1690" y2="260" stroke="#0E0D0B" stroke-width="7" stroke-linecap="round" />
+              <line x1="1470" y1="260" x2="1690" y2="260" stroke="#EDE8DC" stroke-width="3" stroke-linecap="round" />
+              <!-- Gusset Plate with Gold Bolts -->
+              <polygon points="1480,220 1520,220 1480,260" fill="#D4A017" stroke="#0E0D0B" stroke-width="2" />
+              <polygon points="1680,220 1640,220 1680,260" fill="#D4A017" stroke="#0E0D0B" stroke-width="2" />
+
+              <!-- Battle Rope Heavy U-Anchor Ring at Floor -->
+              <path d="M 1480,715 C 1480,695 1505,695 1505,715" fill="none" stroke="#D4A017" stroke-width="6" stroke-linecap="round" />
+            </g>
+
+            <!-- -------------------------------------------------------------
+                 STATION 5 FRAME: DUMBBELL RACK & STORAGE (X: 1920 - 2320)
+                 ------------------------------------------------------------- -->
+            <g id="eq-dumbbell-rack" class="equipment-group">
+              <!-- 3-Tier Angled Commercial Steel Rack Frame -->
+              <line x1="1930" y1="715" x2="1960" y2="520" stroke="#0E0D0B" stroke-width="8" stroke-linecap="square" />
+              <line x1="2050" y1="715" x2="2080" y2="520" stroke="#0E0D0B" stroke-width="8" stroke-linecap="square" />
+              <line x1="1930" y1="715" x2="2050" y2="715" stroke="#0E0D0B" stroke-width="6" />
+
+              <!-- Shelves with Hex Dumbbells -->
+              <!-- Tier 1 (Top) -->
+              <line class="equipment-highlight" x1="1940" y1="535" x2="2090" y2="535" stroke="#D4A017" stroke-width="4" />
+              <!-- DB Pair 1 (10kg) -->
+              <rect x="1955" y="515" width="22" height="18" rx="2" fill="#0E0D0B" stroke="#252420" stroke-width="2" />
+              <line x1="1966" y1="524" x2="1986" y2="524" stroke="#EDE8DC" stroke-width="2" />
+              <rect x="1984" y="515" width="22" height="18" rx="2" fill="#0E0D0B" stroke="#252420" stroke-width="2" />
+              <!-- DB Pair 2 (16kg) -->
+              <rect x="2015" y="512" width="24" height="22" rx="2" fill="#0E0D0B" stroke="#252420" stroke-width="2" />
+              <line x1="2027" y1="523" x2="2050" y2="523" stroke="#EDE8DC" stroke-width="2.5" />
+              <rect x="2048" y="512" width="24" height="22" rx="2" fill="#0E0D0B" stroke="#252420" stroke-width="2" />
+
+              <!-- Tier 2 (Mid - 24kg) -->
+              <line class="equipment-highlight" x1="1932" y1="610" x2="2082" y2="610" stroke="#D4A017" stroke-width="4" />
+              <rect x="1950" y="586" width="28" height="24" rx="2" fill="#0E0D0B" stroke="#252420" stroke-width="2" />
+              <line x1="1964" y1="598" x2="1992" y2="598" stroke="#EDE8DC" stroke-width="3" />
+              <rect x="1990" y="586" width="28" height="24" rx="2" fill="#0E0D0B" stroke="#252420" stroke-width="2" />
+            </g>
+          </g>
+
+
+          <!-- ================================================================
+               LAYER 4: LIVING CHARACTERS & MOVING APPARATUS (Parallax: 0.09)
+               All rigged with pivot transforms, anatomically grounded.
+               ================================================================ -->
+          <g id="layer-characters-main" class="parallax-layer" data-speed="0.09">
+
+            <!-- -------------------------------------------------------------
+                 STATION 1: SQUAT ATHLETE (Heavy Lifter Rig)
+                 Center: X: 310, Y: 460 - 715
+                 ------------------------------------------------------------- -->
+            <g id="station-zone-squat" class="svg-station-zone" tabindex="0" role="button" aria-label="Squat Rack Station - Click to inspect form">
+              <g id="squat-lifter-group">
+                <!-- Drop Shadow on Floor -->
+                <ellipse id="squat-floor-shadow" cx="310" cy="714" rx="65" ry="12" fill="#000000" opacity="0.45" />
+
+                <!-- Left Leg (Thigh, Knee, Shin, Lifting Shoe) -->
+                <g id="squat-leg-left">
+                  <!-- Thigh -->
+                  <path id="squat-thigh-l" d="M 270,580 L 255,650" stroke="#0E0D0B" stroke-width="32" stroke-linecap="round" />
+                  <path d="M 270,580 L 255,650" stroke="#252420" stroke-width="26" stroke-linecap="round" />
+                  <!-- Shin -->
+                  <path id="squat-shin-l" d="M 255,650 L 260,712" stroke="#0E0D0B" stroke-width="24" stroke-linecap="round" />
+                  <path d="M 255,650 L 260,712" stroke="#A06842" stroke-width="18" stroke-linecap="round" />
+                  <!-- Shoe -->
+                  <polygon points="242,716 276,716 272,704 246,704" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="3" />
+                </g>
+
+                <!-- Right Leg -->
+                <g id="squat-leg-right">
+                  <!-- Thigh -->
+                  <path id="squat-thigh-r" d="M 350,580 L 365,650" stroke="#0E0D0B" stroke-width="32" stroke-linecap="round" />
+                  <path d="M 350,580 L 365,650" stroke="#252420" stroke-width="26" stroke-linecap="round" />
+                  <!-- Shin -->
+                  <path id="squat-shin-r" d="M 365,650 L 360,712" stroke="#0E0D0B" stroke-width="24" stroke-linecap="round" />
+                  <path d="M 365,650 L 360,712" stroke="#A06842" stroke-width="18" stroke-linecap="round" />
+                  <!-- Shoe -->
+                  <polygon points="344,716 378,716 374,704 348,704" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="3" />
+                </g>
+
+                <!-- Pelvis & Lifting Belt (Gold buckle) -->
+                <g id="squat-pelvis" transform="translate(0, 0)">
+                  <rect x="268" y="565" width="84" height="28" rx="4" fill="#0E0D0B" stroke="#0E0D0B" stroke-width="2" />
+                  <!-- Heavy Leather Belt with Gold Buckle -->
+                  <rect x="272" y="568" width="76" height="14" fill="#1C1B18" stroke="#D4A017" stroke-width="2" />
+                  <rect x="304" y="566" width="12" height="18" fill="#D4A017" stroke="#0E0D0B" stroke-width="2" />
+                </g>
+
+                <!-- Torso Group (Hinges & Breathes) -->
+                <g id="squat-torso" transform="translate(0, 0)">
+                  <!-- Torso Body (Muscular back & shoulders) -->
+                  <polygon points="274,565 346,565 365,475 255,475" fill="#0E0D0B" stroke="#0E0D0B" stroke-width="4" />
+                  <!-- Singlet Charcoal/Gold Piping -->
+                  <polygon points="278,563 342,563 360,477 260,477" fill="#1F1E1B" />
+                  <line x1="262" y1="477" x2="280" y2="563" stroke="#D4A017" stroke-width="3" />
+                  <line x1="358" y1="477" x2="340" y2="563" stroke="#D4A017" stroke-width="3" />
+
+                  <!-- Head (Neck, Headband, Shaved Fade Hair) -->
+                  <g id="squat-head">
+                    <rect x="298" y="445" width="24" height="32" fill="#A06842" stroke="#0E0D0B" stroke-width="3" />
+                    <!-- Head Oval -->
+                    <circle cx="310" cy="430" r="22" fill="#A06842" stroke="#0E0D0B" stroke-width="3" />
+                    <!-- Shaved Dark Hair -->
+                    <path d="M 290,425 C 290,410 330,410 330,425 Z" fill="#181614" />
+                    <!-- Gold Headband -->
+                    <line x1="289" y1="424" x2="331" y2="424" stroke="#D4A017" stroke-width="5" stroke-linecap="round" />
+                    <!-- Beard Outline -->
+                    <path d="M 298,435 C 310,454 322,435 322,435" fill="#181614" />
+                  </g>
+
+                  <!-- Arms Gripping Olympic Barbell -->
+                  <!-- Left Arm -->
+                  <path d="M 260,475 L 240,455 L 260,442" fill="none" stroke="#0E0D0B" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M 260,475 L 240,455 L 260,442" fill="none" stroke="#A06842" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- Right Arm -->
+                  <path d="M 360,475 L 380,455 L 360,442" fill="none" stroke="#0E0D0B" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M 360,475 L 380,455 L 360,442" fill="none" stroke="#A06842" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+
+                  <!-- Dynamic Sweat Drops Container for Squat -->
+                  <g id="squat-sweat-container"></g>
+                </g>
+
+                <!-- LOADED BARBELL (Moves with Torso & Bends with Weight!) -->
+                <g id="squat-barbell-group" transform="translate(0, 0)">
+                  <!-- Olympic Bar with Dynamic Quadratic Flex Curve -->
+                  <path id="squat-bar-path" d="M 150,445 Q 310,445 470,445" stroke="#0E0D0B" stroke-width="10" stroke-linecap="round" />
+                  <path id="squat-bar-inner" d="M 150,445 Q 310,445 470,445" stroke="#EDE8DC" stroke-width="4" stroke-linecap="round" />
+                  <!-- Center Knurl Gold Markings -->
+                  <line x1="285" y1="445" x2="335" y2="445" stroke="#D4A017" stroke-width="3" />
+
+                  <!-- Left Barbell Plates Stack -->
+                  <g id="squat-plates-left" transform="translate(170, 445)">
+                    <!-- Collars & Loaded bumper plates -->
+                    <rect x="-6" y="-8" width="8" height="16" fill="#D4A017" stroke="#0E0D0B" stroke-width="2" />
+                    <!-- 20kg Plate 1 -->
+                    <rect class="plate-render" x="-22" y="-48" width="14" height="96" rx="3" fill="#141311" stroke="#D4A017" stroke-width="3" />
+                    <!-- 20kg Plate 2 -->
+                    <rect class="plate-render" x="-38" y="-48" width="14" height="96" rx="3" fill="#141311" stroke="#D4A017" stroke-width="3" />
+                    <!-- 10kg Plate -->
+                    <rect class="plate-render" x="-50" y="-38" width="10" height="76" rx="2" fill="#252420" stroke="#0E0D0B" stroke-width="2.5" />
+                    <!-- Dynamic extra plates added by user drag will mount here -->
+                    <g id="squat-extra-plates-left"></g>
+                  </g>
+
+                  <!-- Right Barbell Plates Stack -->
+                  <g id="squat-plates-right" transform="translate(450, 445)">
+                    <!-- Collars & Loaded bumper plates -->
+                    <rect x="-2" y="-8" width="8" height="16" fill="#D4A017" stroke="#0E0D0B" stroke-width="2" />
+                    <!-- 20kg Plate 1 -->
+                    <rect class="plate-render" x="8" y="-48" width="14" height="96" rx="3" fill="#141311" stroke="#D4A017" stroke-width="3" />
+                    <!-- 20kg Plate 2 -->
+                    <rect class="plate-render" x="24" y="-48" width="14" height="96" rx="3" fill="#141311" stroke="#D4A017" stroke-width="3" />
+                    <!-- 10kg Plate -->
+                    <rect class="plate-render" x="40" y="-38" width="10" height="76" rx="2" fill="#252420" stroke="#0E0D0B" stroke-width="2.5" />
+                    <!-- Dynamic extra plates added by user drag will mount here -->
+                    <g id="squat-extra-plates-right"></g>
+                  </g>
+                </g>
+              </g>
+            </g>
+
+
+            <!-- -------------------------------------------------------------
+                 STATION 2: BENCH PRESS & SPOTTER
+                 Center: X: 740, Y: 480 - 715
+                 ------------------------------------------------------------- -->
+            <g id="station-zone-bench" class="svg-station-zone" tabindex="0" role="button" aria-label="Bench Press Station - Click to inspect form">
+              <!-- Spotter Standing Behind Bench -->
+              <g id="bench-spotter-group" transform="translate(680, 480)">
+                <!-- Legs -->
+                <line x1="20" y1="130" x2="15" y2="235" stroke="#0E0D0B" stroke-width="24" stroke-linecap="round" />
+                <line x1="20" y1="130" x2="15" y2="235" stroke="#1E1D1A" stroke-width="18" stroke-linecap="round" />
+                <line x1="60" y1="130" x2="65" y2="235" stroke="#0E0D0B" stroke-width="24" stroke-linecap="round" />
+                <line x1="60" y1="130" x2="65" y2="235" stroke="#1E1D1A" stroke-width="18" stroke-linecap="round" />
+                <!-- Shoes -->
+                <rect x="0" y="230" width="30" height="8" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2" />
+                <rect x="55" y="230" width="30" height="8" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2" />
+                <!-- Torso & Trainer Shirt (Gold/Bone) -->
+                <polygon points="12,130 68,130 78,40 2,40" fill="#0E0D0B" stroke="#0E0D0B" stroke-width="3" />
+                <polygon points="15,128 65,128 75,42 5,42" fill="#EDE8DC" />
+                <rect x="30" y="60" width="20" height="24" fill="#D4A017" />
+                <!-- Head -->
+                <circle cx="40" cy="18" r="18" fill="#C48E60" stroke="#0E0D0B" stroke-width="3" />
+                <path d="M 24,12 C 24,2 56,2 56,12 Z" fill="#181614" />
+                <!-- Arms Poised (Hovering over bar in ready position) -->
+                <path id="spotter-arm-l" d="M 8,46 L -10,80 L 15,100" fill="none" stroke="#0E0D0B" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 8,46 L -10,80 L 15,100" fill="none" stroke="#C48E60" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+                <path id="spotter-arm-r" d="M 72,46 L 90,80 L 65,100" fill="none" stroke="#0E0D0B" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 72,46 L 90,80 L 65,100" fill="none" stroke="#C48E60" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+
+              <!-- Athlete Lying on Bench Pad -->
+              <g id="bench-lifter-group">
+                <!-- Feet planted on floor (Leg drive) -->
+                <path d="M 825,620 L 850,670 L 855,714" fill="none" stroke="#0E0D0B" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 825,620 L 850,670 L 855,714" fill="none" stroke="#7A4A28" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+                <!-- Shoes flat on floor -->
+                <polygon points="845,715 880,715 875,702 848,702" fill="#D4A017" stroke="#0E0D0B" stroke-width="3" />
+
+                <!-- Supine Torso with Powerlifter Arch -->
+                <path d="M 685,605 C 730,590 770,590 820,608" fill="none" stroke="#0E0D0B" stroke-width="28" stroke-linecap="round" />
+                <path d="M 685,605 C 730,590 770,590 820,608" fill="none" stroke="#161513" stroke-width="22" stroke-linecap="round" />
+                <!-- Head resting on pad -->
+                <circle cx="682" cy="600" r="16" fill="#7A4A28" stroke="#0E0D0B" stroke-width="3" />
+                <path d="M 668,600 C 668,588 696,588 696,600 Z" fill="#100F0D" />
+
+                <!-- Dynamic Bench Arms (Rigged Press Motion) -->
+                <g id="bench-arms-rig">
+                  <!-- Left Arm -->
+                  <path id="bench-arm-left" d="M 720,595 L 705,550 L 710,510" fill="none" stroke="#0E0D0B" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="bench-arm-left-skin" d="M 720,595 L 705,550 L 710,510" fill="none" stroke="#7A4A28" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- Right Arm -->
+                  <path id="bench-arm-right" d="M 780,595 L 795,550 L 790,510" fill="none" stroke="#0E0D0B" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="bench-arm-right-skin" d="M 780,595 L 795,550 L 790,510" fill="none" stroke="#7A4A28" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+
+                <!-- Bench Barbell & Plates (Ascends & Descends) -->
+                <g id="bench-barbell-group" transform="translate(0, 0)">
+                  <line x1="620" y1="510" x2="880" y2="510" stroke="#0E0D0B" stroke-width="8" stroke-linecap="round" />
+                  <line x1="620" y1="510" x2="880" y2="510" stroke="#EDE8DC" stroke-width="3.5" stroke-linecap="round" />
+                  <!-- Left Plates -->
+                  <rect x="630" y="475" width="12" height="70" rx="2" fill="#141311" stroke="#D4A017" stroke-width="2.5" />
+                  <rect x="618" y="480" width="10" height="60" rx="2" fill="#252420" stroke="#0E0D0B" stroke-width="2" />
+                  <!-- Right Plates -->
+                  <rect x="858" y="475" width="12" height="70" rx="2" fill="#141311" stroke="#D4A017" stroke-width="2.5" />
+                  <rect x="872" y="480" width="10" height="60" rx="2" fill="#252420" stroke="#0E0D0B" stroke-width="2" />
+                </g>
+              </g>
+            </g>
+
+
+            <!-- -------------------------------------------------------------
+                 STATION 3: TREADMILL RUNNER (Female Athlete Rig)
+                 Center: X: 1180, Y: 460 - 700
+                 ------------------------------------------------------------- -->
+            <g id="station-zone-treadmill" class="svg-station-zone" tabindex="0" role="button" aria-label="Treadmill Runner Station - Click to inspect form">
+              <g id="treadmill-runner-group" transform="translate(1180, 560)">
+                <!-- Drop shadow on treadmill deck -->
+                <ellipse cx="0" cy="115" rx="35" ry="6" fill="#000000" opacity="0.4" />
+
+                <!-- Left Leg (Background) -->
+                <g id="run-leg-left">
+                  <path id="run-thigh-l" d="M -5,25 L -25,70" stroke="#0E0D0B" stroke-width="22" stroke-linecap="round" />
+                  <path d="M -5,25 L -25,70" stroke="#B37648" stroke-width="16" stroke-linecap="round" />
+                  <path id="run-shin-l" d="M -25,70 L 10,110" stroke="#0E0D0B" stroke-width="18" stroke-linecap="round" />
+                  <path d="M -25,70 L 10,110" stroke="#B37648" stroke-width="12" stroke-linecap="round" />
+                  <!-- Shoe -->
+                  <polygon id="run-foot-l" points="2,112 28,112 24,104 6,104" fill="#D4A017" stroke="#0E0D0B" stroke-width="2.5" />
+                </g>
+
+                <!-- Pelvis & Gold Running Shorts -->
+                <rect x="-18" y="10" width="36" height="22" rx="4" fill="#D4A017" stroke="#0E0D0B" stroke-width="3" />
+
+                <!-- Torso & Athletic Tank Top (Bone/Charcoal) -->
+                <g id="run-torso">
+                  <polygon points="-16,10 16,10 22,-50 -10,-50" fill="#0E0D0B" stroke="#0E0D0B" stroke-width="3" />
+                  <polygon points="-14,8 14,8 20,-48 -8,-48" fill="#EDE8DC" />
+
+                  <!-- Left Arm (Background arm swing) -->
+                  <g id="run-arm-left">
+                    <path id="run-arm-l-path" d="M -6,-40 L -28,-15 L -10,0" fill="none" stroke="#0E0D0B" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M -6,-40 L -28,-15 L -10,0" fill="none" stroke="#B37648" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+
+                  <!-- Head & Dynamic Ponytail Lag -->
+                  <g id="run-head">
+                    <circle cx="8" cy="-70" r="18" fill="#B37648" stroke="#0E0D0B" stroke-width="3" />
+                    <!-- Hair silhouette -->
+                    <path d="M -6,-72 C -6,-86 24,-86 24,-72 Z" fill="#141311" />
+                    <!-- Dynamic Ponytail (Transforms in JS) -->
+                    <path id="run-ponytail" d="M -6,-74 C -28,-78 -35,-60 -24,-50 C -20,-56 -10,-68 -6,-74" fill="#141311" stroke="#0E0D0B" stroke-width="2" />
+                  </g>
+
+                  <!-- Right Arm (Foreground arm swing) -->
+                  <g id="run-arm-right">
+                    <path id="run-arm-r-path" d="M 14,-40 L 36,-15 L 20,5" fill="none" stroke="#0E0D0B" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M 14,-40 L 36,-15 L 20,5" fill="none" stroke="#B37648" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </g>
+
+                <!-- Right Leg (Foreground) -->
+                <g id="run-leg-right">
+                  <path id="run-thigh-r" d="M 5,25 L 30,65" stroke="#0E0D0B" stroke-width="22" stroke-linecap="round" />
+                  <path d="M 5,25 L 30,65" stroke="#B37648" stroke-width="16" stroke-linecap="round" />
+                  <path id="run-shin-r" d="M 30,65 L 15,110" stroke="#0E0D0B" stroke-width="18" stroke-linecap="round" />
+                  <path d="M 30,65 L 15,110" stroke="#B37648" stroke-width="12" stroke-linecap="round" />
+                  <!-- Shoe -->
+                  <polygon id="run-foot-r" points="8,112 36,112 32,104 14,104" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2.5" />
+                </g>
+              </g>
+            </g>
+
+
+            <!-- -------------------------------------------------------------
+                 STATION 4: RIG PULL-UPS & BATTLE ROPES (Dual Athlete Rig)
+                 Center: X: 1540 (Pullup) & X: 1740 (Ropes)
+                 ------------------------------------------------------------- -->
+            <g id="station-zone-pullup" class="svg-station-zone" tabindex="0" role="button" aria-label="Pull-up & Battle Ropes Station - Click to inspect form">
+              
+              <!-- Athlete A: Strict Calisthenics Pull-up -->
+              <g id="pullup-athlete-group" transform="translate(1580, 260)">
+                <!-- Hands locked onto pull-up bar -->
+                <rect x="-35" y="-6" width="14" height="14" rx="2" fill="#8E562F" stroke="#0E0D0B" stroke-width="2" />
+                <rect x="21" y="-6" width="14" height="14" rx="2" fill="#8E562F" stroke="#0E0D0B" stroke-width="2" />
+
+                <!-- Arms (Kinematic Elbow Flexion) -->
+                <g id="pullup-arms">
+                  <path id="pullup-arm-l" d="M -28,0 L -38,50 L -20,80" fill="none" stroke="#0E0D0B" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M -28,0 L -38,50 L -20,80" fill="none" stroke="#8E562F" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="pullup-arm-r" d="M 28,0 L 38,50 L 20,80" fill="none" stroke="#0E0D0B" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M 28,0 L 38,50 L 20,80" fill="none" stroke="#8E562F" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+
+                <!-- Torso, Head, Legs (Rises from deadhang to chin over bar) -->
+                <g id="pullup-body-carriage" transform="translate(0, 100)">
+                  <!-- Head -->
+                  <circle cx="0" cy="-24" r="18" fill="#8E562F" stroke="#0E0D0B" stroke-width="3" />
+                  <path d="M -14,-28 C -14,-42 14,-42 14,-28 Z" fill="#141311" />
+                  <!-- Torso (V-taper lats) -->
+                  <polygon points="-24, -4 24, -4 14, 75 -14, 75" fill="#0E0D0B" stroke="#0E0D0B" stroke-width="3" />
+                  <polygon points="-21, -2 21, -2 12, 73 -12, 73" fill="#1F1D19" />
+                  <!-- Gold Gym Tank accent -->
+                  <line x1="-12" y1="12" x2="12" y2="12" stroke="#D4A017" stroke-width="3" />
+                  <!-- Shorts -->
+                  <rect x="-16" y="75" width="32" height="24" rx="2" fill="#D4A017" stroke="#0E0D0B" stroke-width="3" />
+                  <!-- Hollow-Body Legs (Knees slightly tucked) -->
+                  <path d="M -8,99 L -12,160 L -18,205" fill="none" stroke="#0E0D0B" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M -8,99 L -12,160 L -18,205" fill="none" stroke="#8E562F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M 8,99 L 4,160 L -2,205" fill="none" stroke="#0E0D0B" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M 8,99 L 4,160 L -2,205" fill="none" stroke="#8E562F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- Feet Pointed Down -->
+                  <polygon points="-24,208 -8,208 -12,198 -22,198" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2" />
+                </g>
+              </g>
+
+              <!-- Athlete B: High Intensity Battle Ropes (Quarter Squat Power Stance) -->
+              <g id="ropes-athlete-group" transform="translate(1730, 600)">
+                <!-- Floor shadow -->
+                <ellipse cx="20" cy="114" rx="45" ry="10" fill="#000000" opacity="0.45" />
+
+                <!-- Legs in Athletic Quarter Squat -->
+                <path d="M 0,40 L -20,80 L -15,112" fill="none" stroke="#0E0D0B" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 0,40 L -20,80 L -15,112" fill="none" stroke="#683F20" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 35,40 L 55,80 L 50,112" fill="none" stroke="#0E0D0B" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 35,40 L 55,80 L 50,112" fill="none" stroke="#683F20" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                <!-- Shoes -->
+                <rect x="-30" y="108" width="28" height="8" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2" />
+                <rect x="40" y="108" width="28" height="8" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2" />
+
+                <!-- Torso (Braced, slight forward hinge) -->
+                <polygon points="-8,40 42,40 48,-30 -14,-30" fill="#0E0D0B" stroke="#0E0D0B" stroke-width="3" />
+                <polygon points="-5,38 39,38 45,-28 -11,-28" fill="#1C1B18" />
+                <!-- Head -->
+                <circle cx="16" cy="-48" r="18" fill="#683F20" stroke="#0E0D0B" stroke-width="3" />
+                <path d="M 2,-52 C 2,-66 30,-66 30,-52 Z" fill="#12110F" />
+
+                <!-- Arms Pumping Ropes (Alternating Waves) -->
+                <path id="rope-arm-l" d="M -10,-20 L -25,10 L -45,15" fill="none" stroke="#0E0D0B" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M -10,-20 L -25,10 L -45,15" fill="none" stroke="#683F20" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                <path id="rope-arm-r" d="M 40,-20 L 25,10 L 5,15" fill="none" stroke="#0E0D0B" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 40,-20 L 25,10 L 5,15" fill="none" stroke="#683F20" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+
+              <!-- Dynamic Traveling Wave Ropes (Bezier Curves Updated via JS) -->
+              <g id="battle-ropes-lines">
+                <!-- Rope 1 (Left hand to Anchor at 1500, 715) -->
+                <path id="battle-rope-path-1" d="M 1685,615 Q 1630,600 1590,660 T 1500,715" fill="none" stroke="#0E0D0B" stroke-width="8" stroke-linecap="round" />
+                <path id="battle-rope-inner-1" d="M 1685,615 Q 1630,600 1590,660 T 1500,715" fill="none" stroke="#D4A017" stroke-width="4" stroke-linecap="round" />
+                <!-- Rope 2 (Right hand to Anchor) -->
+                <path id="battle-rope-path-2" d="M 1735,615 Q 1660,650 1580,590 T 1500,715" fill="none" stroke="#0E0D0B" stroke-width="8" stroke-linecap="round" />
+                <path id="battle-rope-inner-2" d="M 1735,615 Q 1660,650 1580,590 T 1500,715" fill="none" stroke="#EDE8DC" stroke-width="4" stroke-linecap="round" />
+              </g>
+            </g>
+
+
+            <!-- -------------------------------------------------------------
+                 STATION 5: FREE WEIGHTS (Dumbbell Curl & Kettlebell Swing)
+                 Center: X: 2100 (Curl) & X: 2240 (Kettlebell)
+                 ------------------------------------------------------------- -->
+            <g id="station-zone-dumbbells" class="svg-station-zone" tabindex="0" role="button" aria-label="Free Weights Station - Click to inspect form">
+              
+              <!-- Athlete A: Alternating Strict Dumbbell Curls -->
+              <g id="curl-athlete-group" transform="translate(2080, 560)">
+                <!-- Shadow -->
+                <ellipse cx="0" cy="154" rx="35" ry="8" fill="#000000" opacity="0.45" />
+
+                <!-- Solid Stance Legs -->
+                <line x1="-15" y1="50" x2="-18" y2="152" stroke="#0E0D0B" stroke-width="22" stroke-linecap="round" />
+                <line x1="-15" y1="50" x2="-18" y2="152" stroke="#1E1D1A" stroke-width="16" stroke-linecap="round" />
+                <line x1="15" y1="50" x2="18" y2="152" stroke="#0E0D0B" stroke-width="22" stroke-linecap="round" />
+                <line x1="15" y1="50" x2="18" y2="152" stroke="#1E1D1A" stroke-width="16" stroke-linecap="round" />
+                <!-- Shoes -->
+                <rect x="-30" y="148" width="26" height="8" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2" />
+                <rect x="6" y="148" width="26" height="8" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2" />
+
+                <!-- Torso (Upright spine, no swinging) -->
+                <polygon points="-20,50 20,50 26,-30 -26,-30" fill="#0E0D0B" stroke="#0E0D0B" stroke-width="3" />
+                <polygon points="-17,48 17,48 23,-28 -23,-28" fill="#EDE8DC" />
+                <rect x="-8" y="-10" width="16" height="28" fill="#D4A017" />
+                <!-- Head -->
+                <circle cx="0" cy="-48" r="18" fill="#AC7349" stroke="#0E0D0B" stroke-width="3" />
+                <path d="M -14,-52 C -14,-66 14,-66 14,-52 Z" fill="#141311" />
+
+                <!-- Left Arm (Dynamic Curling Joint) -->
+                <g id="curl-arm-left">
+                  <path id="curl-arm-l-path" d="M -22,-20 L -30,20 L -25,48" fill="none" stroke="#0E0D0B" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M -22,-20 L -30,20 L -25,48" fill="none" stroke="#AC7349" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- Dumbbell Left -->
+                  <g id="curl-db-left" transform="translate(-25, 48)">
+                    <rect x="-14" y="-8" width="8" height="16" rx="2" fill="#0E0D0B" stroke="#D4A017" stroke-width="2" />
+                    <line x1="-8" y1="0" x2="8" y2="0" stroke="#EDE8DC" stroke-width="3" />
+                    <rect x="6" y="-8" width="8" height="16" rx="2" fill="#0E0D0B" stroke="#D4A017" stroke-width="2" />
+                  </g>
+                </g>
+
+                <!-- Right Arm (Dynamic Curling Joint) -->
+                <g id="curl-arm-right">
+                  <path id="curl-arm-r-path" d="M 22,-20 L 30,20 L 25,48" fill="none" stroke="#0E0D0B" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M 22,-20 L 30,20 L 25,48" fill="none" stroke="#AC7349" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- Dumbbell Right -->
+                  <g id="curl-db-right" transform="translate(25, 48)">
+                    <rect x="-14" y="-8" width="8" height="16" rx="2" fill="#0E0D0B" stroke="#D4A017" stroke-width="2" />
+                    <line x1="-8" y1="0" x2="8" y2="0" stroke="#EDE8DC" stroke-width="3" />
+                    <rect x="6" y="-8" width="8" height="16" rx="2" fill="#0E0D0B" stroke="#D4A017" stroke-width="2" />
+                  </g>
+                </g>
+              </g>
+
+              <!-- Athlete B: Explosive Kettlebell Hip Hinge Swing -->
+              <g id="kettlebell-athlete-group" transform="translate(2240, 560)">
+                <!-- Shadow -->
+                <ellipse id="kb-floor-shadow" cx="0" cy="154" rx="40" ry="9" fill="#000000" opacity="0.45" />
+
+                <!-- Legs (Knee soft bend during hinge) -->
+                <g id="kb-legs">
+                  <path id="kb-leg-l" d="M -15,50 L -25,100 L -20,152" fill="none" stroke="#0E0D0B" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M -15,50 L -25,100 L -20,152" fill="none" stroke="#965F36" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                  <path id="kb-leg-r" d="M 20,50 L 10,100 L 15,152" fill="none" stroke="#0E0D0B" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M 20,50 L 10,100 L 15,152" fill="none" stroke="#965F36" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- Shoes -->
+                  <rect x="-35" y="148" width="30" height="8" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2" />
+                  <rect x="4" y="148" width="30" height="8" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2" />
+                </g>
+
+                <!-- Torso Carriage (Hinges back at hips, then snaps forward) -->
+                <g id="kb-torso-carriage" transform="translate(0, 50)">
+                  <polygon points="-22,0 22,0 18,-80 -18,-80" fill="#0E0D0B" stroke="#0E0D0B" stroke-width="3" />
+                  <polygon points="-19,-2 19,-2 15,-78 -15,-78" fill="#1C1B18" />
+                  <!-- Shorts -->
+                  <rect x="-24" y="0" width="48" height="26" rx="2" fill="#D4A017" stroke="#0E0D0B" stroke-width="3" />
+                  <!-- Head -->
+                  <circle cx="0" cy="-98" r="18" fill="#965F36" stroke="#0E0D0B" stroke-width="3" />
+                  <path d="M -14,-102 C -14,-116 14,-116 14,-102 Z" fill="#12110F" />
+
+                  <!-- Arms as Straight Cables Guiding Kettlebell -->
+                  <g id="kb-arms" transform="translate(0, -70)">
+                    <line id="kb-arm-left" x1="-12" y1="0" x2="-8" y2="70" stroke="#0E0D0B" stroke-width="16" stroke-linecap="round" />
+                    <line x1="-12" y1="0" x2="-8" y2="70" stroke="#965F36" stroke-width="10" stroke-linecap="round" />
+                    <line id="kb-arm-right" x1="12" y1="0" x2="8" y2="70" stroke="#0E0D0B" stroke-width="16" stroke-linecap="round" />
+                    <line x1="12" y1="0" x2="8" y2="70" stroke="#965F36" stroke-width="10" stroke-linecap="round" />
+
+                    <!-- Kettlebell (Iron Bell with Gold Handle Band) -->
+                    <g id="kettlebell-object" transform="translate(0, 70)">
+                      <!-- Handle Horns -->
+                      <path d="M -10,0 C -10,-18 10,-18 10,0" fill="none" stroke="#D4A017" stroke-width="6" stroke-linecap="round" />
+                      <!-- Heavy Iron Sphere -->
+                      <circle cx="0" cy="12" r="18" fill="#0E0D0B" stroke="#252420" stroke-width="3" />
+                      <!-- Weight Stamp -->
+                      <text x="0" y="16" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" font-weight="700" fill="#EDE8DC">24</text>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+
+
+          <!-- ================================================================
+               LAYER 5: FOREGROUND PROPS (Parallax: 0.14)
+               Chalk bowl, stacked plates, safety cones
+               ================================================================ -->
+          <g id="layer-foreground-props" class="parallax-layer" data-speed="0.14">
+            
+            <!-- Chalk Bowl on Pedestal (Click for Chalk Puff Easter Egg!) -->
+            <g id="chalk-bowl" style="cursor: pointer;" transform="translate(480, 630)">
+              <!-- Heavy cast-iron stand -->
+              <polygon points="-8,85 8,85 4,0 -4,0" fill="#1E1C18" stroke="#0E0D0B" stroke-width="3" />
+              <polygon points="-24,85 24,85 18,80 -18,80" fill="#141311" stroke="#0E0D0B" stroke-width="3" />
+              <!-- Chalk Bowl Shell -->
+              <path d="M -24,0 C -24,24 24,24 24,0 Z" fill="#252320" stroke="#0E0D0B" stroke-width="3" />
+              <!-- White Chalk Heap inside bowl -->
+              <ellipse cx="0" cy="0" rx="20" ry="6" fill="#EDE8DC" stroke="#0E0D0B" stroke-width="2" />
+              <circle cx="-5" cy="-2" r="3" fill="#FAF7F0" />
+              <circle cx="6" cy="-1" r="2.5" fill="#FAF7F0" />
+              <!-- Chalk Tag -->
+              <text x="0" y="38" text-anchor="middle" font-family="'JetBrains Mono'" font-size="8" font-weight="700" fill="#D4A017">CHALK</text>
+            </g>
+
+            <!-- Floor Plate Stacks near Squat Zone -->
+            <g id="floor-plate-stack" transform="translate(130, 690)">
+              <!-- Stack 1 (20kg) -->
+              <rect x="0" y="10" width="46" height="15" fill="#141311" stroke="#D4A017" stroke-width="2.5" rx="2" />
+              <rect x="2" y="0" width="42" height="12" fill="#1C1B18" stroke="#0E0D0B" stroke-width="2" rx="2" />
+              <rect x="6" y="-8" width="34" height="10" fill="#252420" stroke="#0E0D0B" stroke-width="2" rx="2" />
+              <text x="23" y="22" text-anchor="middle" font-family="'JetBrains Mono'" font-size="8" font-weight="700" fill="#EDE8DC">20KG</text>
+            </g>
+          </g>
+
+        </svg>
+
+        <!-- Chalk Particle Canvas for Interactive Bursts -->
+        <canvas id="chalk-particle-canvas"></canvas>
+
+        <!-- Hard-Edged Inspection Tooltip Card -->
+        <div class="station-tooltip" id="station-tooltip" role="tooltip">
+          <div class="tt-header">
+            <span class="tt-title" id="tt-title">SQUAT CAGE MK-IV</span>
+            <span class="tt-badge" id="tt-badge">STATION 01</span>
+          </div>
+          <div class="tt-muscles" id="tt-muscles">Quads · Hamstrings · Glutes · Core</div>
+          <div style="font-size: 11px; color: var(--concrete-300); margin-bottom: 8px;" id="tt-benefit">
+            Best for maximum strength & lower-body power.
+          </div>
+          <button class="tt-action" id="tt-action-btn" type="button" style="display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--ink); background: var(--gold); padding: 5px 10px; border: 2px solid var(--ink); cursor: pointer; text-transform: uppercase;">
+            <span>See workout</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Interactive Draggable Plates Loading Dock (Squat Barbell) -->
+      <div class="plate-dock-container" id="plate-dock" aria-label="Plate Loading Dock">
+        <div class="dock-header">
+          <span class="dock-title">SQUAT BAR LOAD</span>
+          <span class="dock-weight-readout" id="dock-weight-total">BAR 20 + 60 = 80 KG</span>
+        </div>
+        
+        <div class="dock-plates-row">
+          <div class="drag-plate-item plate-20kg" draggable="true" data-weight="20" title="Drag 20kg plate to squat bar">
+            <span class="plate-weight-num">20</span>
+            <span class="plate-unit">KG</span>
+          </div>
+          <div class="drag-plate-item plate-15kg" draggable="true" data-weight="15" title="Drag 15kg plate to squat bar">
+            <span class="plate-weight-num">15</span>
+            <span class="plate-unit">KG</span>
+          </div>
+          <div class="drag-plate-item plate-10kg" draggable="true" data-weight="10" title="Drag 10kg plate to squat bar">
+            <span class="plate-weight-num">10</span>
+            <span class="plate-unit">KG</span>
+          </div>
+          <div class="drag-plate-item plate-5kg" draggable="true" data-weight="5" title="Drag 5kg plate to squat bar">
+            <span class="plate-weight-num">5</span>
+            <span class="plate-unit">KG</span>
+          </div>
+        </div>
+
+        <div class="dock-controls-sub">
+          <span class="dock-hint">Drag plates onto bar or click to add</span>
+          <button class="btn-reset-plates" id="btn-reset-plates" title="Reset squat bar to 80kg">Reset (80kg)</button>
+        </div>
+
+        <!-- Over 180kg Humorous Callout -->
+        <div class="joke-banner" id="joke-heavy-banner">
+          ⚠️ Too heavy? Come train with us at Mahavir Enclave — our certified coaches spot you!
+        </div>
+      </div>
+
+      <!-- Form Demo Zoom Inspection Drawer -->
+      <aside class="form-demo-panel" id="form-demo-panel" aria-label="Form Demo and Coaching Cues" aria-hidden="true">
+        <div class="demo-header">
+          <div>
+            <div class="demo-station-tag" id="demo-tag">STATION 01 · STRENGTH</div>
+            <h2 class="demo-station-name" id="demo-name">SQUAT CAGE</h2>
+          </div>
+          <button class="btn-close-demo" id="btn-close-demo" aria-label="Exit zoom view (Esc)">✕</button>
+        </div>
+
+        <div class="demo-status-pill">
+          <span class="status-indicator"></span>
+          <span>SLOW-MOTION FORM DEMO (0.5X)</span>
+        </div>
+
+        <ul class="demo-cues-list" id="demo-cues-list">
+          <li class="demo-cue-item">
+            <span class="cue-number">1</span>
+            <span>Brace core 360° before un-racking; preserve neutral lumbar and cervical alignment.</span>
+          </li>
+          <li class="demo-cue-item">
+            <span class="cue-number">2</span>
+            <span>Descend with controlled cadence; hip crease drops below knees with toes tracking outward.</span>
+          </li>
+          <li class="demo-cue-item">
+            <span class="cue-number">3</span>
+            <span>Drive through mid-foot and heels; squeeze glutes and lock out knees cleanly at top.</span>
+          </li>
+        </ul>
+
+        <div class="demo-actions-row">
+          <button class="btn-demo-back" id="btn-demo-back">← Back to Floor</button>
+          <a href="https://wa.me/919717808212?text=Hi%20Golden%20Pro%20Gym%2C%20I%20am%20interested%20in%20training%20on%20your%20stations." target="_blank" rel="noopener noreferrer" class="btn-demo-book">
+            Book Trial
+          </a>
+        </div>
+      </aside>
+
+    </main>
+
+    <!-- Bottom Station Navigator & Quick Jumps -->
+    <nav class="bottom-hud-bar" aria-label="Station Quick Navigation">
+      <ul class="station-nav-list" role="tablist">
+        <li><button class="station-nav-btn active" data-station="wide" role="tab">All Floor (Wide)</button></li>
+        <li><button class="station-nav-btn" data-station="squat" role="tab">01 · Squat Rack</button></li>
+        <li><button class="station-nav-btn" data-station="bench" role="tab">02 · Bench Press</button></li>
+        <li><button class="station-nav-btn" data-station="treadmill" role="tab">03 · Treadmill</button></li>
+        <li><button class="station-nav-btn" data-station="pullup" role="tab">04 · Pull-up & Ropes</button></li>
+        <li><button class="station-nav-btn" data-station="dumbbells" role="tab">05 · Free Weights</button></li>
+      </ul>
+
+      <div class="hud-toggles-group">
+        <button class="hud-toggle-btn" id="btn-motion-toggle" title="Toggle animation for accessibility">
+          <span id="motion-icon">⏸</span>
+          <span id="motion-label">Motion: ON</span>
+        </button>
+        <button class="hud-toggle-btn" id="btn-time-toggle" title="Fast-forward time easter egg">
+          <span>⚡</span>
+          <span>Time Warp</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Sticky Bottom CTA for Mobile Viewports -->
+    <div class="mobile-sticky-bar" id="mobile-sticky-bar">
+      <button class="btn-primary" id="btn-trial-mobile" style="flex: 1.3; font-size: 19px; padding: 12px 14px;">
+        Book Free Trial
+      </button>
+      <a href="https://wa.me/919717808212?text=Hi%20Golden%20Pro%20Gym%2C%20I%20want%20to%20visit%20your%20gym." 
+         class="btn-secondary" style="flex: 1; font-size: 13px; padding: 12px 10px; text-align: center;">
+        WhatsApp
+      </a>
+    </div>
+
+    <!-- Procedural Easter Egg Toast Notification -->
+    <div class="game-toast" id="game-toast"></div>
+
+  </div>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT MOTION ENGINE & INTERACTION LOGIC
+       ========================================================================== -->
+  <script>
+    /**
+     * CONFIG OBJECT
+     * Core gym business metadata, hours, stations, and mechanics
+     */
+    const CONFIG = {
+      gymName: "Golden Pro Gym",
+      location: "Mahavir Enclave, Palam Road, New Delhi 110059",
+      phoneDisplay: "097178 08212",
+      phoneRaw: "9717808212",
+      rating: 5.0,
+      reviewsCount: 14,
+      openingHourIST: 6,  // 6:00 AM
+      closingHourIST: 22, // 10:00 PM (22:00)
+      barWeight: 20,      // kg
+      baseAddedPlates: 60,// kg (two 20s, two 10s)
+      stations: {
+        squat: {
+          id: "squat",
+          tag: "STATION 01 · STRENGTH & MASS",
+          name: "SQUAT RACK MK-IV",
+          muscles: "Quads · Hamstrings · Glutes · Deep Core",
+          benefit: "Maximum lower-body strength and nervous system recruitment.",
+          zoom: { x: 310, y: 510, scale: 2.15 },
+          formCues: [
+            "Brace core 360° before un-racking; preserve neutral lumbar and cervical alignment.",
+            "Descend with controlled cadence; hip crease drops below knees with toes tracking outward.",
+            "Drive through mid-foot and heels; squeeze glutes and lock out knees cleanly at top."
+          ]
+        },
+        bench: {
+          id: "bench",
+          tag: "STATION 02 · POWERLIFTING",
+          name: "COMPETITION BENCH PRESS",
+          muscles: "Pectoralis Major · Anterior Deltoids · Triceps Brachii",
+          benefit: "Heavy upper-body hypertrophy and horizontal pressing power.",
+          zoom: { x: 740, y: 550, scale: 2.15 },
+          formCues: [
+            "Retract and depress scapulae, digging shoulder blades firmly into pad.",
+            "Plant feet flat on the rubber floor to generate continuous isometric leg drive.",
+            "Touch bar to mid-sternum, pause without bouncing, press in slight back arc."
+          ]
+        },
+        treadmill: {
+          id: "treadmill",
+          tag: "STATION 03 · CARDIO ENGINE",
+          name: "HIIT SPRINT TREADMILL",
+          muscles: "Cardiovascular Engine · Calves · Hip Flexors",
+          benefit: "VO2 max expansion, sprint endurance, and metabolic conditioning.",
+          zoom: { x: 1180, y: 550, scale: 2.15 },
+          formCues: [
+            "Maintain tall upright posture with slight forward hinge from ankles.",
+            "Land softly on mid-foot directly beneath hips without over-striding.",
+            "Pump arms compactly at 90° angles without crossing torso midline."
+          ]
+        },
+        pullup: {
+          id: "pullup",
+          tag: "STATION 04 · FUNCTIONAL RIG",
+          name: "RIG PULL-UPS & BATTLE ROPES",
+          muscles: "Latissimus Dorsi · Biceps · Forearms · Core Stability",
+          benefit: "Relative bodyweight dominance and high-frequency grip conditioning.",
+          zoom: { x: 1640, y: 520, scale: 2.05 },
+          formCues: [
+            "Initiate each pull-up from full dead-hang with active scapular depression.",
+            "Clear chin cleanly above bar without kicking or excessive swinging.",
+            "Sink into athletic quarter-squat and whip battle ropes rhythmically from hips."
+          ]
+        },
+        dumbbells: {
+          id: "dumbbells",
+          tag: "STATION 05 · FREE WEIGHTS",
+          name: "FREE WEIGHTS & KETTLEBELL",
+          muscles: "Biceps · Posterior Chain · Glutes · Grip Endurance",
+          benefit: "Unilateral muscular balance and explosive hip-hinge velocity.",
+          zoom: { x: 2160, y: 560, scale: 2.05 },
+          formCues: [
+            "Pin elbows securely against ribs and supinate forearms at peak of curl.",
+            "Hinge deeply at hips with flat back; do not squat the kettlebell.",
+            "Snap glutes explosively at lockout; let kettlebell float weightlessly to chest height."
+          ]
+        }
+      }
+    };
+
+    // Application State
+    const state = {
+      activeStation: 'wide',
+      addedPlatesWeight: CONFIG.baseAddedPlates, // 60 kg default
+      isDemoMode: false,
+      isPaused: false,
+      prefersReducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+      timeWarp: false,
+      repsToday: 14892,
+      mouseX: 0,
+      mouseY: 0,
+      targetMouseX: 0,
+      targetMouseY: 0,
+      timeSeconds: 0,
+      lastFrameTime: performance.now(),
+      sweatTimer: 0,
+      hoveredStation: null,
+      activeHoverId: null,
+      stationTimes: {
+        squat: 0,
+        bench: 0,
+        treadmill: 0,
+        pullup: 0,
+        dumbbells: 0
+      }
+    };
+
+    // DOM Elements
+    const sceneStage = document.getElementById('scene-stage');
+    const svgCanvas = document.getElementById('gym-svg-canvas');
+    const tooltip = document.getElementById('station-tooltip');
+    const ttTitle = document.getElementById('tt-title');
+    const ttBadge = document.getElementById('tt-badge');
+    const ttMuscles = document.getElementById('tt-muscles');
+    const ttBenefit = document.getElementById('tt-benefit');
+    const formDemoPanel = document.getElementById('form-demo-panel');
+    const demoTag = document.getElementById('demo-tag');
+    const demoName = document.getElementById('demo-name');
+    const demoCuesList = document.getElementById('demo-cues-list');
+    const btnCloseDemo = document.getElementById('btn-close-demo');
+    const btnDemoBack = document.getElementById('btn-demo-back');
+    const dockWeightTotal = document.getElementById('dock-weight-total');
+    const jokeHeavyBanner = document.getElementById('joke-heavy-banner');
+    const btnResetPlates = document.getElementById('btn-reset-plates');
+    const globalRepsCounter = document.getElementById('global-reps-counter');
+    const floorEnergyVal = document.getElementById('floor-energy-val');
+    const gameToast = document.getElementById('game-toast');
+    const btnMotionToggle = document.getElementById('btn-motion-toggle');
+    const motionIcon = document.getElementById('motion-icon');
+    const motionLabel = document.getElementById('motion-label');
+    const btnTimeToggle = document.getElementById('btn-time-toggle');
+    const istTimeText = document.getElementById('ist-time-text');
+    const statusText = document.getElementById('status-text');
+    const statusDot = document.getElementById('status-dot');
+
+    // Rigged SVG Nodes
+    const squatTorso = document.getElementById('squat-torso');
+    const squatPelvis = document.getElementById('squat-pelvis');
+    const squatThighL = document.getElementById('squat-thigh-l');
+    const squatThighR = document.getElementById('squat-thigh-r');
+    const squatShinL = document.getElementById('squat-shin-l');
+    const squatShinR = document.getElementById('squat-shin-r');
+    const squatBarPath = document.getElementById('squat-bar-path');
+    const squatBarInner = document.getElementById('squat-bar-inner');
+    const squatBarbellGroup = document.getElementById('squat-barbell-group');
+    const squatExtraLeft = document.getElementById('squat-extra-plates-left');
+    const squatExtraRight = document.getElementById('squat-extra-plates-right');
+    const squatFloorShadow = document.getElementById('squat-floor-shadow');
+
+    const benchArmLeft = document.getElementById('bench-arm-left');
+    const benchArmLeftSkin = document.getElementById('bench-arm-left-skin');
+    const benchArmRight = document.getElementById('bench-arm-right');
+    const benchArmRightSkin = document.getElementById('bench-arm-right-skin');
+    const benchBarbellGroup = document.getElementById('bench-barbell-group');
+    const spotterArmL = document.getElementById('spotter-arm-l');
+    const spotterArmR = document.getElementById('spotter-arm-r');
+
+    const runRunnerGroup = document.getElementById('treadmill-runner-group');
+    const runThighL = document.getElementById('run-thigh-l');
+    const runShinL = document.getElementById('run-shin-l');
+    const runFootL = document.getElementById('run-foot-l');
+    const runThighR = document.getElementById('run-thigh-r');
+    const runShinR = document.getElementById('run-shin-r');
+    const runFootR = document.getElementById('run-foot-r');
+    const runArmLPath = document.getElementById('run-arm-l-path');
+    const runArmRPath = document.getElementById('run-arm-r-path');
+    const runPonytail = document.getElementById('run-ponytail');
+    const treadmillBeltLines = document.getElementById('treadmill-belt-lines');
+    const treadmillSpeedText = document.getElementById('treadmill-speed-text');
+
+    const pullupBodyCarriage = document.getElementById('pullup-body-carriage');
+    const pullupArmL = document.getElementById('pullup-arm-l');
+    const pullupArmR = document.getElementById('pullup-arm-r');
+
+    const ropeArmL = document.getElementById('rope-arm-l');
+    const ropeArmR = document.getElementById('rope-arm-r');
+    const battleRopePath1 = document.getElementById('battle-rope-path-1');
+    const battleRopeInner1 = document.getElementById('battle-rope-inner-1');
+    const battleRopePath2 = document.getElementById('battle-rope-path-2');
+    const battleRopeInner2 = document.getElementById('battle-rope-inner-2');
+
+    const curlArmLPath = document.getElementById('curl-arm-l-path');
+    const curlArmRPath = document.getElementById('curl-arm-r-path');
+    const curlDbLeft = document.getElementById('curl-db-left');
+    const curlDbRight = document.getElementById('curl-db-right');
+
+    const kbTorsoCarriage = document.getElementById('kb-torso-carriage');
+    const kbLegL = document.getElementById('kb-leg-l');
+    const kbLegR = document.getElementById('kb-leg-r');
+    const kbArms = document.getElementById('kb-arms');
+    const kbFloorShadow = document.getElementById('kb-floor-shadow');
+
+    // Clock nodes
+    const clockHourHand = document.getElementById('clock-hour-hand');
+    const clockMinHand = document.getElementById('clock-min-hand');
+    const clockSecHand = document.getElementById('clock-sec-hand');
+
+    // ==========================================================================
+    // PROCEDURAL CHALK PARTICLE SYSTEM
+    // ==========================================================================
+    const chalkCanvas = document.getElementById('chalk-particle-canvas');
+    const ctx = chalkCanvas.getContext('2d');
+    let chalkParticles = [];
+
+    function resizeCanvas() {
+      const rect = sceneStage.getBoundingClientRect();
+      chalkCanvas.width = rect.width;
+      chalkCanvas.height = rect.height;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function spawnChalkBurst(xRatio, yRatio, count = 28) {
+      const w = chalkCanvas.width;
+      const h = chalkCanvas.height;
+      const originX = xRatio * w;
+      const originY = yRatio * h;
+
+      for (let i = 0; i < count; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 3.5 + 0.5;
+        chalkParticles.push({
+          x: originX + (Math.random() - 0.5) * 20,
+          y: originY + (Math.random() - 0.5) * 15,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed - Math.random() * 2.2, // upward drift
+          radius: Math.random() * 5 + 2.5,
+          alpha: Math.random() * 0.5 + 0.45,
+          decay: Math.random() * 0.015 + 0.008
+        });
+      }
+    }
+
+    function updateAndRenderChalk() {
+      ctx.clearRect(0, 0, chalkCanvas.width, chalkCanvas.height);
+      for (let i = chalkParticles.length - 1; i >= 0; i--) {
+        const p = chalkParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vx *= 0.98;
+        p.vy += 0.03; // slight gravity
+        p.radius += 0.08;
+        p.alpha -= p.decay;
+
+        if (p.alpha <= 0) {
+          chalkParticles.splice(i, 1);
+          continue;
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(237, 232, 220, ${p.alpha})`;
+        ctx.fill();
+      }
+    }
+
+    // ==========================================================================
+    // REAL INDIAN STANDARD TIME (IST) & DAY/NIGHT LIGHTING
+    // ==========================================================================
+    let simulatedHourOffset = 0;
+
+    function getISTDate() {
+      const now = new Date();
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const istTime = new Date(utc + (3600000 * 5.5) + (simulatedHourOffset * 3600000));
+      return istTime;
+    }
+
+    function updateTimeAndLighting() {
+      const ist = getISTDate();
+      const hours = ist.getHours();
+      const minutes = ist.getMinutes();
+      const seconds = ist.getSeconds();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      const formattedHours = hours % 12 || 12;
+      const formattedMins = minutes < 10 ? '0' + minutes : minutes;
+
+      istTimeText.textContent = `${formattedHours}:${formattedMins} ${ampm} IST`;
+
+      // Update Wall Clock Hands
+      const secAngle = seconds * 6;
+      const minAngle = minutes * 6 + seconds * 0.1;
+      const hourAngle = (hours % 12) * 30 + minutes * 0.5;
+
+      clockSecHand.setAttribute('transform', `rotate(${secAngle}, 0, 0)`);
+      clockMinHand.setAttribute('transform', `rotate(${minAngle}, 0, 0)`);
+      clockHourHand.setAttribute('transform', `rotate(${hourAngle}, 0, 0)`);
+
+      // Determine Open/Close Status (Open 6 AM to 10 PM)
+      const isOpen = hours >= CONFIG.openingHourIST && hours < CONFIG.closingHourIST;
+      if (isOpen) {
+        statusDot.className = 'status-indicator';
+        statusText.textContent = `OPEN NOW · CLOSES 10 PM`;
+      } else {
+        statusDot.className = 'status-indicator closed';
+        statusText.textContent = `CLOSED · OPENS 6 AM IST`;
+      }
+    }
+    setInterval(updateTimeAndLighting, 1000);
+    updateTimeAndLighting();
+
+    // ==========================================================================
+    // SHOW TOAST HELPER
+    // ==========================================================================
+    let toastTimeout;
+    function showToast(message) {
+      gameToast.textContent = message;
+      gameToast.classList.add('active');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        gameToast.classList.remove('active');
+      }, 2600);
+    }
+
+    // ==========================================================================
+    // PARALLAX CONTROLLER
+    // Mouse on desktop, subtle auto-sway on mobile
+    // ==========================================================================
+    const parallaxLayers = document.querySelectorAll('.parallax-layer');
+
+    window.addEventListener('mousemove', (e) => {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      state.targetMouseX = (e.clientX - centerX) / centerX;
+      state.targetMouseY = (e.clientY - centerY) / centerY;
+    });
+
+    // Touch auto drift / tilt
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', (e) => {
+        if (e.gamma !== null && e.beta !== null) {
+          state.targetMouseX = Math.max(-1, Math.min(1, e.gamma / 25));
+          state.targetMouseY = Math.max(-1, Math.min(1, (e.beta - 45) / 25));
+        }
+      });
+    }
+
+    // ==========================================================================
+    // WEIGHT CALCULATION & BARBELL FLEX PHYSICS
+    // ==========================================================================
+    function updateSquatBarWeight() {
+      const totalWeight = CONFIG.barWeight + state.addedPlatesWeight;
+      dockWeightTotal.textContent = `BAR ${CONFIG.barWeight} + ${state.addedPlatesWeight} = ${totalWeight} KG`;
+
+      // Bar Flex: proportional to total weight
+      // At 80kg flex is ~3px, at 180kg+ flex is up to 14px!
+      const flex = Math.min(16, (totalWeight / 80) * 3.5);
+      const flexCurveD = `M 150,445 Q 310,${445 + flex} 470,445`;
+      squatBarPath.setAttribute('d', flexCurveD);
+      squatBarInner.setAttribute('d', flexCurveD);
+
+      // Render extra plates on barbell SVG
+      renderExtraPlatesOnBar();
+
+      // Joke banner triggers if weight exceeds 180 kg
+      if (totalWeight >= 180) {
+        jokeHeavyBanner.style.display = 'block';
+        showToast("Heavy Iron Loaded! 180kg+ on the bar!");
+      } else {
+        jokeHeavyBanner.style.display = 'none';
+      }
+    }
+
+    function renderExtraPlatesOnBar() {
+      // Clear previous extra plates
+      squatExtraLeft.innerHTML = '';
+      squatExtraRight.innerHTML = '';
+
+      // Count extra 20s, 15s, 10s, 5s above base 60kg
+      const extraWeight = state.addedPlatesWeight - CONFIG.baseAddedPlates;
+      if (extraWeight <= 0) return;
+
+      const platePairs = Math.floor(extraWeight / 10);
+      let leftOffset = -62;
+      let rightOffset = 52;
+
+      for (let i = 0; i < Math.min(platePairs, 5); i++) {
+        // Left plate
+        const lp = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        lp.setAttribute('x', leftOffset - (i * 12));
+        lp.setAttribute('y', '-42');
+        lp.setAttribute('width', '10');
+        lp.setAttribute('height', '84');
+        lp.setAttribute('rx', '2');
+        lp.setAttribute('fill', '#D4A017');
+        lp.setAttribute('stroke', '#0E0D0B');
+        lp.setAttribute('stroke-width', '2');
+        squatExtraLeft.appendChild(lp);
+
+        // Right plate
+        const rp = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rp.setAttribute('x', rightOffset + (i * 12));
+        rp.setAttribute('y', '-42');
+        rp.setAttribute('width', '10');
+        rp.setAttribute('height', '84');
+        rp.setAttribute('rx', '2');
+        rp.setAttribute('fill', '#D4A017');
+        rp.setAttribute('stroke', '#0E0D0B');
+        rp.setAttribute('stroke-width', '2');
+        squatExtraRight.appendChild(rp);
+      }
+    }
+
+    // Plate Drag and Drop handlers
+    const plateItems = document.querySelectorAll('.drag-plate-item');
+    plateItems.forEach(item => {
+      item.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', item.dataset.weight);
+        e.dataTransfer.effectAllowed = 'copy';
+      });
+
+      // Quick Click to Add Plate (for mobile / fast interaction)
+      item.addEventListener('click', () => {
+        const weight = parseInt(item.dataset.weight, 10);
+        state.addedPlatesWeight += weight * 2; // Loaded on both sleeves
+        updateSquatBarWeight();
+        spawnChalkBurst(0.18, 0.55, 18);
+        showToast(`+${weight * 2} KG Loaded on Barbell`);
+      });
+    });
+
+    const squatZone = document.getElementById('station-zone-squat');
+    squatZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'copy';
+    });
+
+    squatZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const weight = parseInt(e.dataTransfer.getData('text/plain'), 10) || 20;
+      state.addedPlatesWeight += weight * 2;
+      updateSquatBarWeight();
+      spawnChalkBurst(0.18, 0.55, 25);
+      showToast(`CLANK! +${weight * 2} KG Added to Squat Bar`);
+    });
+
+    btnResetPlates.addEventListener('click', () => {
+      state.addedPlatesWeight = CONFIG.baseAddedPlates;
+      updateSquatBarWeight();
+      showToast("Squat Bar Reset to 80 KG");
+    });
+
+    // ==========================================================================
+    // CAMERA ZOOM & FORM DEMO DRAWER
+    // ==========================================================================
+    function zoomToStation(stationId) {
+      if (stationId === 'wide' || !CONFIG.stations[stationId]) {
+        // Reset to full wide floor
+        state.activeStation = 'wide';
+        state.isDemoMode = false;
+        sceneStage.style.transform = 'none';
+        formDemoPanel.classList.remove('active');
+        formDemoPanel.setAttribute('aria-hidden', 'true');
+        hideTooltip();
+
+        // Update nav buttons
+        document.querySelectorAll('.station-nav-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.station === 'wide');
+        });
+        return;
+      }
+
+      const st = CONFIG.stations[stationId];
+      state.activeStation = stationId;
+      state.isDemoMode = true;
+
+      // Transform sceneStage so target station is centered in viewport
+      const svgWidth = 2400;
+      const svgHeight = 860;
+      const targetX = st.zoom.x;
+      const targetY = st.zoom.y;
+      const scale = st.zoom.scale;
+
+      // Compute normalized translation offsets
+      const transX = ((svgWidth / 2) - targetX) * (scale / svgWidth) * 100;
+      const transY = ((svgHeight / 2) - targetY) * (scale / svgHeight) * 100;
+
+      sceneStage.style.transform = `scale(${scale}) translate(${transX * 0.4}px, ${transY * 0.4}px)`;
+
+      // Populate Form Demo Panel
+      demoTag.textContent = st.tag;
+      demoName.textContent = st.name;
+      demoCuesList.innerHTML = st.formCues.map((cue, idx) => `
+        <li class="demo-cue-item">
+          <span class="cue-number">${idx + 1}</span>
+          <span>${cue}</span>
+        </li>
+      `).join('');
+
+      formDemoPanel.classList.add('active');
+      formDemoPanel.setAttribute('aria-hidden', 'false');
+      hideTooltip();
+
+      // Update Nav buttons
+      document.querySelectorAll('.station-nav-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.station === stationId);
+      });
+
+      showToast(`Inspecting ${st.name}`);
+    }
+
+    // Attach Station Click / Keydown Listeners
+    Object.keys(CONFIG.stations).forEach(id => {
+      const zoneNode = document.getElementById(`station-zone-${id}`);
+      if (!zoneNode) return;
+
+      zoneNode.addEventListener('click', () => {
+        zoomToStation(id);
+      });
+
+      zoneNode.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          zoomToStation(id);
+        }
+      });
+
+      // Hover Tooltip Handlers & Station Speed-up
+      zoneNode.addEventListener('mouseenter', (e) => {
+        state.hoveredStation = id;
+        state.activeHoverId = id;
+        if (state.activeStation !== 'wide') return;
+        const st = CONFIG.stations[id];
+        ttTitle.textContent = st.name;
+        ttBadge.textContent = id.toUpperCase();
+        ttMuscles.textContent = st.muscles;
+        ttBenefit.textContent = st.benefit;
+
+        // Position tooltip above station in screen space
+        const rect = zoneNode.getBoundingClientRect();
+        const stageRect = sceneStage.getBoundingClientRect();
+        tooltip.style.left = `${(rect.left + rect.width / 2) - stageRect.left}px`;
+        tooltip.style.top = `${rect.top - stageRect.top - 12}px`;
+        tooltip.classList.add('active');
+      });
+
+      zoneNode.addEventListener('mouseleave', () => {
+        if (state.hoveredStation === id) {
+          state.hoveredStation = null;
+        }
+        hideTooltip();
+      });
+    });
+
+    function hideTooltip() {
+      tooltip.classList.remove('active');
+    }
+
+    // Click on tooltip "See workout" action button
+    const ttActionBtn = document.getElementById('tt-action-btn');
+    if (ttActionBtn) {
+      ttActionBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (state.activeHoverId) {
+          zoomToStation(state.activeHoverId);
+        }
+      });
+    }
+
+    // Magnetic Cursor Pull for Desktop Primary CTA Button
+    const btnTrialDesk = document.getElementById('btn-trial-desktop');
+    if (btnTrialDesk) {
+      btnTrialDesk.addEventListener('mousemove', (e) => {
+        const rect = btnTrialDesk.getBoundingClientRect();
+        const relX = e.clientX - (rect.left + rect.width / 2);
+        const relY = e.clientY - (rect.top + rect.height / 2);
+        btnTrialDesk.style.transform = `translate(${relX * 0.28}px, ${relY * 0.28}px)`;
+      });
+      btnTrialDesk.addEventListener('mouseleave', () => {
+        btnTrialDesk.style.transform = '';
+      });
+    }
+
+    // Procedural Sweat Drops on Lifters
+    function spawnSweatDrop(x, y) {
+      const container = document.getElementById('squat-sweat-container');
+      if (!container) return;
+      const drop = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      drop.setAttribute('cx', x);
+      drop.setAttribute('cy', y);
+      drop.setAttribute('r', '2.5');
+      drop.setAttribute('fill', '#EDE8DC');
+      drop.setAttribute('stroke', '#0E0D0B');
+      drop.setAttribute('stroke-width', '1');
+      drop.setAttribute('opacity', '0.9');
+      container.appendChild(drop);
+
+      let curY = y;
+      let op = 0.9;
+      const fallTimer = setInterval(() => {
+        curY += 2.8;
+        op -= 0.05;
+        drop.setAttribute('cy', curY);
+        drop.setAttribute('opacity', Math.max(0, op));
+        if (op <= 0 || curY > y + 42) {
+          clearInterval(fallTimer);
+          drop.remove();
+        }
+      }, 30);
+    }
+
+    // Close Demo Buttons
+    btnCloseDemo.addEventListener('click', () => zoomToStation('wide'));
+    btnDemoBack.addEventListener('click', () => zoomToStation('wide'));
+
+    // ESC key exits zoom
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        zoomToStation('wide');
+      }
+    });
+
+    // Nav Bar Button Jumps
+    document.querySelectorAll('.station-nav-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        zoomToStation(btn.dataset.station);
+      });
+    });
+
+    // ==========================================================================
+    // EASTER EGGS: CHALK BOWL, WALL SIGN, CLOCK
+    // ==========================================================================
+    const chalkBowlNode = document.getElementById('chalk-bowl');
+    chalkBowlNode.addEventListener('click', (e) => {
+      const rect = chalkBowlNode.getBoundingClientRect();
+      const stageRect = sceneStage.getBoundingClientRect();
+      const relX = (rect.left + rect.width / 2 - stageRect.left) / stageRect.width;
+      const relY = (rect.top + 10 - stageRect.top) / stageRect.height;
+
+      spawnChalkBurst(relX, relY, 45);
+      showToast("Puff! Pure Magnesium Carbonate grip ready.");
+    });
+
+    const wallClockNode = document.getElementById('wall-clock');
+    wallClockNode.addEventListener('click', () => {
+      state.timeWarp = !state.timeWarp;
+      simulatedHourOffset = (simulatedHourOffset + 6) % 24;
+      updateTimeAndLighting();
+      showToast(state.timeWarp ? "⚡ Time Warp: Beast Mode 2.5X!" : "Time Normalized.");
+    });
+
+    btnTimeToggle.addEventListener('click', () => {
+      simulatedHourOffset = (simulatedHourOffset + 6) % 24;
+      updateTimeAndLighting();
+      showToast(`Time Fast-Forwarded to ${getISTDate().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} IST`);
+    });
+
+    const wallSignNode = document.getElementById('wall-gym-sign');
+    wallSignNode.addEventListener('click', () => {
+      spawnChalkBurst(0.5, 0.3, 30);
+      showToast("Golden Pro Gym · Mahavir Enclave's Authentic Iron");
+    });
+
+    // Reduced Motion / Motion Toggle
+    btnMotionToggle.addEventListener('click', () => {
+      state.isPaused = !state.isPaused;
+      motionIcon.textContent = state.isPaused ? '▶' : '⏸';
+      motionLabel.textContent = state.isPaused ? 'Motion: OFF' : 'Motion: ON';
+      showToast(state.isPaused ? "Gym Animations Paused" : "Gym Animations Resumed");
+    });
+
+    // IntersectionObserver to pause loop when offscreen
+    let isIntersecting = true;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isIntersecting = entry.isIntersecting;
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.getElementById('viewport-bounds'));
+
+    // CTA Click Handlers
+    function triggerTrialModal() {
+      window.open('https://wa.me/919717808212?text=Hi%20Golden%20Pro%20Gym%2C%20I%20would%20like%20to%20book%20a%20free%20trial%20session%20at%20Mahavir%20Enclave.', '_blank');
+    }
+    document.getElementById('btn-trial-desktop').addEventListener('click', triggerTrialModal);
+    document.getElementById('btn-trial-mobile').addEventListener('click', triggerTrialModal);
+
+    // ==========================================================================
+    // RIGGED KINEMATICS & MOTION LOOP (60 FPS)
+    // Custom easing, non-robotic weight pauses, dynamic bar flex, rope waves
+    // ==========================================================================
+    function mainAnimationLoop(now) {
+      requestAnimationFrame(mainAnimationLoop);
+
+      if (!isIntersecting || (state.isPaused && !state.prefersReducedMotion)) {
+        return;
+      }
+
+      const delta = (now - state.lastFrameTime) * 0.001;
+      state.lastFrameTime = now;
+
+      // Time speed scaling (Demo mode runs at 0.5x, TimeWarp runs at 2.5x)
+      let speedMult = 1.0;
+      if (state.isDemoMode) speedMult *= 0.55;
+      if (state.timeWarp) speedMult *= 2.4;
+
+      // Lifter weight scaling for squat: heavier weight = slower, more grinding cycle
+      const totalWeight = CONFIG.barWeight + state.addedPlatesWeight;
+      const squatWeightFactor = Math.max(0.6, 1.0 - (totalWeight - 80) * 0.0028);
+
+      state.timeSeconds += delta * speedMult;
+      const t = state.timeSeconds;
+
+      // Independent station clocks with hover speed-up
+      const dt = delta * speedMult;
+      state.stationTimes.squat += dt * (state.hoveredStation === 'squat' ? 1.4 : 1.0);
+      state.stationTimes.bench += dt * (state.hoveredStation === 'bench' ? 1.4 : 1.0);
+      state.stationTimes.treadmill += dt * (state.hoveredStation === 'treadmill' ? 1.35 : 1.0);
+      state.stationTimes.pullup += dt * (state.hoveredStation === 'pullup' ? 1.4 : 1.0);
+      state.stationTimes.dumbbells += dt * (state.hoveredStation === 'dumbbells' ? 1.4 : 1.0);
+
+      // Letter-spacing & weight shift on hero headline
+      const heroTitleElem = document.getElementById('interactive-title');
+      if (heroTitleElem) {
+        const titleSpacing = (1 + Math.abs(state.mouseX) * 2.2).toFixed(1);
+        heroTitleElem.style.letterSpacing = `${titleSpacing}px`;
+      }
+
+      // Update Parallax smoothly (Lerp)
+      state.mouseX += (state.targetMouseX - state.mouseX) * 0.08;
+      state.mouseY += (state.targetMouseY - state.mouseY) * 0.08;
+
+      parallaxLayers.forEach(layer => {
+        const speed = parseFloat(layer.dataset.speed) || 0.05;
+        const shiftX = state.mouseX * speed * 350;
+        const shiftY = state.mouseY * speed * 120;
+        layer.setAttribute('transform', `translate(${shiftX.toFixed(2)}, ${shiftY.toFixed(2)})`);
+      });
+
+      // ------------------------------------------------------------------------
+      // 1. SQUAT RACK KINEMATICS
+      // Cycle: Descent (1.4s) -> Hole pause (0.4s) -> Drive up (0.9s) -> Lockout (0.4s)
+      // ------------------------------------------------------------------------
+      const tSquat = state.stationTimes.squat;
+      const squatCycle = ((tSquat * squatWeightFactor * 0.32) % 1.0);
+      let squatYOffset = 0; // Hips & bar travel 0 to 85px down
+      let squatThighAngle = 0;
+
+      // Sweat drops dripping from lifter during heavy sets
+      state.sweatTimer += delta;
+      if (state.sweatTimer > 2.8) {
+        state.sweatTimer = 0;
+        spawnSweatDrop(324, 436 + squatYOffset);
+      }
+
+      if (squatCycle < 0.44) {
+        // Descent with cubic deceleration into the hole
+        const p = squatCycle / 0.44;
+        const easeIn = p * p;
+        squatYOffset = easeIn * 86;
+        squatThighAngle = easeIn * 38;
+      } else if (squatCycle < 0.56) {
+        // Paused in the hole (tension hold)
+        squatYOffset = 86 + Math.sin(t * 18) * 1.0; // slight micro-tremor under load
+        squatThighAngle = 38;
+      } else if (squatCycle < 0.88) {
+        // Explosive drive up out of the hole
+        const p = (squatCycle - 0.56) / 0.32;
+        const easeOut = 1 - Math.pow(1 - p, 2);
+        squatYOffset = 86 * (1 - easeOut);
+        squatThighAngle = 38 * (1 - easeOut);
+      } else {
+        // Lockout & breath
+        squatYOffset = 0;
+        squatThighAngle = 0;
+      }
+
+      // Apply transforms to rigged squat joints
+      squatTorso.setAttribute('transform', `translate(0, ${squatYOffset})`);
+      squatPelvis.setAttribute('transform', `translate(0, ${squatYOffset * 0.95})`);
+      squatBarbellGroup.setAttribute('transform', `translate(0, ${squatYOffset})`);
+      squatFloorShadow.setAttribute('rx', `${65 + squatYOffset * 0.15}`);
+
+      // Knee tracking & shins
+      squatThighL.setAttribute('d', `M 270,${580 + squatYOffset * 0.95} L ${255 - squatThighAngle * 0.3},${650 + squatYOffset * 0.5}`);
+      squatShinL.setAttribute('d', `M ${255 - squatThighAngle * 0.3},${650 + squatYOffset * 0.5} L 260,712`);
+
+      squatThighR.setAttribute('d', `M 350,${580 + squatYOffset * 0.95} L ${365 + squatThighAngle * 0.3},${650 + squatYOffset * 0.5}`);
+      squatShinR.setAttribute('d', `M ${365 + squatThighAngle * 0.3},${650 + squatYOffset * 0.5} L 360,712`);
+
+      // ------------------------------------------------------------------------
+      // 2. BENCH PRESS KINEMATICS
+      // Cycle: Touch chest (descends 75px) -> Pause -> Press to full lockout
+      // ------------------------------------------------------------------------
+      const tBench = state.stationTimes.bench;
+      const benchCycle = ((tBench * 0.38 + 0.3) % 1.0);
+      let benchPressY = 0; // 0 (lockout) to 68px (chest touch)
+
+      if (benchCycle < 0.45) {
+        const p = benchCycle / 0.45;
+        benchPressY = p * p * 68;
+      } else if (benchCycle < 0.55) {
+        benchPressY = 68;
+      } else if (benchCycle < 0.88) {
+        const p = (benchCycle - 0.55) / 0.33;
+        benchPressY = 68 * (1 - Math.sin(p * Math.PI * 0.5));
+      } else {
+        benchPressY = 0;
+      }
+
+      benchBarbellGroup.setAttribute('transform', `translate(0, ${benchPressY})`);
+
+      // Elbow flexion on bench
+      const elbowDropL = 550 + benchPressY * 0.75;
+      const elbowDropR = 550 + benchPressY * 0.75;
+      const gripYL = 510 + benchPressY;
+      const gripYR = 510 + benchPressY;
+
+      const pathArmL = `M 720,595 L 700,${elbowDropL} L 710,${gripYL}`;
+      benchArmLeft.setAttribute('d', pathArmL);
+      benchArmLeftSkin.setAttribute('d', pathArmL);
+
+      const pathArmR = `M 780,595 L 800,${elbowDropR} L 790,${gripYR}`;
+      benchArmRight.setAttribute('d', pathArmR);
+      benchArmRightSkin.setAttribute('d', pathArmR);
+
+      // Spotter nods and tracks slightly
+      const spotterNod = Math.sin(tBench * 2.2) * 2;
+      spotterArmL.setAttribute('d', `M 8,46 L -10,${80 + benchPressY * 0.15} L 15,${100 + benchPressY * 0.2}`);
+      spotterArmR.setAttribute('d', `M 72,46 L 90,${80 + benchPressY * 0.15} L 65,${100 + benchPressY * 0.2}`);
+
+      // ------------------------------------------------------------------------
+      // 3. TREADMILL RUNNER KINEMATICS
+      // High cadence running gait cycle with ponytail swing & belt scrolling
+      // ------------------------------------------------------------------------
+      const tRun = state.stationTimes.treadmill;
+      const runCadence = 3.2; // strides per second
+      const runPhase = (tRun * runCadence * Math.PI * 2);
+
+      // Vertical bounce
+      const runBounce = Math.abs(Math.sin(runPhase)) * 8;
+      runRunnerGroup.setAttribute('transform', `translate(1180, ${560 - runBounce})`);
+
+      // Alternating leg angles
+      const legAngleL = Math.sin(runPhase);
+      const legAngleR = Math.sin(runPhase + Math.PI);
+
+      // Hip to knee to ankle coordinates
+      const kneeLX = -5 + Math.sin(legAngleL * 0.7) * 42;
+      const kneeLY = 25 + Math.cos(legAngleL * 0.7) * 44;
+      const footLX = kneeLX + Math.sin(legAngleL * 0.5 - 0.4) * 40;
+      const footLY = Math.min(112, kneeLY + Math.cos(legAngleL * 0.5 - 0.4) * 42);
+
+      runThighL.setAttribute('d', `M -5,25 L ${kneeLX},${kneeLY}`);
+      runShinL.setAttribute('d', `M ${kneeLX},${kneeLY} L ${footLX},${footLY}`);
+      runFootL.setAttribute('transform', `translate(${footLX - 12}, ${footLY - 108})`);
+
+      const kneeRX = 5 + Math.sin(legAngleR * 0.7) * 42;
+      const kneeRY = 25 + Math.cos(legAngleR * 0.7) * 44;
+      const footRX = kneeRX + Math.sin(legAngleR * 0.5 - 0.4) * 40;
+      const footRY = Math.min(112, kneeRY + Math.cos(legAngleR * 0.5 - 0.4) * 42);
+
+      runThighR.setAttribute('d', `M 5,25 L ${kneeRX},${kneeRY}`);
+      runShinR.setAttribute('d', `M ${kneeRX},${kneeRY} L ${footRX},${footRY}`);
+      runFootR.setAttribute('transform', `translate(${footRX - 12}, ${footRY - 108})`);
+
+      // Arm swing (Opposite phase to legs)
+      const armAngleL = Math.sin(runPhase + Math.PI);
+      const armAngleR = Math.sin(runPhase);
+
+      runArmLPath.setAttribute('d', `M -6,-40 L ${-22 + armAngleL * 18},${-15 - Math.abs(armAngleL) * 8} L ${-10 + armAngleL * 24},${armAngleL * 14}`);
+      runArmRPath.setAttribute('d', `M 14,-40 L ${32 + armAngleR * 18},${-15 - Math.abs(armAngleR) * 8} L ${20 + armAngleR * 24},${armAngleR * 14}`);
+
+      // Ponytail lag (Secondary phase delayed motion)
+      const ponyTailLag = Math.sin(runPhase - 0.65) * 8;
+      runPonytail.setAttribute('transform', `rotate(${ponyTailLag}, -6, -74)`);
+
+      // Treadmill belt shift
+      const beltShift = (tRun * 120) % 24;
+      treadmillBeltLines.setAttribute('transform', `translate(${-beltShift}, 0)`);
+
+      // Minor speed readout variance
+      if (Math.floor(tRun * 2) % 4 === 0) {
+        const slightSpeed = (12.8 + Math.sin(tRun * 0.5) * 0.2).toFixed(1);
+        treadmillSpeedText.textContent = slightSpeed;
+      }
+
+      // ------------------------------------------------------------------------
+      // 4. RIG PULL-UPS & BATTLE ROPES
+      // Pull-up: dead hang to chin over bar
+      // Battle Ropes: high-frequency sinusoidal ripples
+      // ------------------------------------------------------------------------
+      const tPull = state.stationTimes.pullup;
+      const pullCycle = (tPull * 0.32 + 0.6) % 1.0;
+      let pullupY = 120; // 120 (dead hang) to 20 (chin over bar)
+
+      if (pullCycle < 0.4) {
+        // Explosive pull
+        const p = pullCycle / 0.4;
+        pullupY = 120 - Math.pow(p, 1.8) * 100;
+      } else if (pullCycle < 0.52) {
+        // Peak hold
+        pullupY = 20;
+      } else if (pullCycle < 0.88) {
+        // Controlled eccentric descent
+        const p = (pullCycle - 0.52) / 0.36;
+        pullupY = 20 + p * 100;
+      } else {
+        // Deadhang stretch
+        pullupY = 120;
+      }
+
+      pullupBodyCarriage.setAttribute('transform', `translate(0, ${pullupY})`);
+      // Elbow angle to bar
+      pullupArmL.setAttribute('d', `M -28,0 L ${-38 - (120 - pullupY) * 0.15},${pullupY * 0.45} L -20,${pullupY * 0.85}`);
+      pullupArmR.setAttribute('d', `M 28,0 L ${38 + (120 - pullupY) * 0.15},${pullupY * 0.45} L 20,${pullupY * 0.85}`);
+
+      // Battle Ropes: 4 Hz rapid undulating waves
+      const ropeFreq = 3.6;
+      const ropePhase1 = tPull * ropeFreq * Math.PI * 2;
+      const ropePhase2 = ropePhase1 + Math.PI; // alternating hands
+
+      const ropeHandY1 = Math.sin(ropePhase1) * 22;
+      const ropeHandY2 = Math.sin(ropePhase2) * 22;
+
+      ropeArmL.setAttribute('d', `M -10,-20 L -25,${10 + ropeHandY1 * 0.5} L -45,${15 + ropeHandY1}`);
+      ropeArmR.setAttribute('d', `M 40,-20 L 25,${10 + ropeHandY2 * 0.5} L 5,${15 + ropeHandY2}`);
+
+      // Generate rope bezier curves with traveling waves to floor anchor (1500, 715)
+      const wave1A = Math.sin(ropePhase1 - 1.2) * 24;
+      const wave1B = Math.sin(ropePhase1 - 2.5) * 16;
+      const waveD1 = `M 1685,${615 + ropeHandY1} Q 1630,${605 + wave1A} 1575,${655 + wave1B} T 1500,715`;
+      battleRopePath1.setAttribute('d', waveD1);
+      battleRopeInner1.setAttribute('d', waveD1);
+
+      const wave2A = Math.sin(ropePhase2 - 1.2) * 24;
+      const wave2B = Math.sin(ropePhase2 - 2.5) * 16;
+      const waveD2 = `M 1735,${615 + ropeHandY2} Q 1660,${635 + wave2A} 1570,${665 + wave2B} T 1500,715`;
+      battleRopePath2.setAttribute('d', waveD2);
+      battleRopeInner2.setAttribute('d', waveD2);
+
+      // ------------------------------------------------------------------------
+      // 5. FREE WEIGHTS (Dumbbell Curls & Kettlebell Swing)
+      // ------------------------------------------------------------------------
+      const tDb = state.stationTimes.dumbbells;
+      // Alternating Dumbbell Curls
+      const curlPhaseL = Math.sin(tDb * 1.8);
+      const curlPhaseR = Math.sin(tDb * 1.8 + Math.PI);
+
+      const curlAngleL = Math.max(0, curlPhaseL);
+      const curlAngleR = Math.max(0, curlPhaseR);
+
+      // Left arm curl joint
+      const dbLeftY = 48 - curlAngleL * 52;
+      const dbLeftX = -25 + curlAngleL * 10;
+      curlArmLPath.setAttribute('d', `M -22,-20 L ${-30 - curlAngleL * 8},${20 - curlAngleL * 8} L ${dbLeftX},${dbLeftY}`);
+      curlDbLeft.setAttribute('transform', `translate(${dbLeftX}, ${dbLeftY}) rotate(${curlAngleL * 25})`);
+
+      // Right arm curl joint
+      const dbRightY = 48 - curlAngleR * 52;
+      const dbRightX = 25 - curlAngleR * 10;
+      curlArmRPath.setAttribute('d', `M 22,-20 L ${30 + curlAngleR * 8},${20 - curlAngleR * 8} L ${dbRightX},${dbRightY}`);
+      curlDbRight.setAttribute('transform', `translate(${dbRightX}, ${dbRightY}) rotate(${-curlAngleR * 25})`);
+
+      // Kettlebell Swing (Hip hinge pendulum)
+      const kbCycle = (tDb * 0.48) % 1.0;
+      let kbSwingAngle = 0; // -35° (hinge back between thighs) to +65° (chest float)
+      let kbTorsoHinge = 0; // 0° (upright) to 40° (hinged flat back)
+
+      if (kbCycle < 0.45) {
+        // Hinge back
+        const p = kbCycle / 0.45;
+        const ease = Math.sin(p * Math.PI * 0.5);
+        kbSwingAngle = -35 * ease;
+        kbTorsoHinge = 38 * ease;
+      } else if (kbCycle < 0.70) {
+        // Explosive hip drive upward
+        const p = (kbCycle - 0.45) / 0.25;
+        const ease = Math.sin(p * Math.PI * 0.5);
+        kbSwingAngle = -35 + (65 - (-35)) * ease;
+        kbTorsoHinge = 38 * (1 - ease);
+      } else {
+        // Gravity pendulum drop
+        const p = (kbCycle - 0.70) / 0.30;
+        kbSwingAngle = 65 * (1 - p);
+        kbTorsoHinge = 0;
+      }
+
+      kbTorsoCarriage.setAttribute('transform', `translate(0, 50) rotate(${kbTorsoHinge}, 0, 0)`);
+      kbArms.setAttribute('transform', `translate(0, -70) rotate(${kbSwingAngle}, 0, 0)`);
+
+      // Soft knee bend on kettlebell hinge
+      const kbKneeShift = kbTorsoHinge * 0.25;
+      kbLegL.setAttribute('d', `M -15,50 L ${-25 - kbKneeShift},100 L -20,152`);
+      kbLegR.setAttribute('d', `M 20,50 L ${10 - kbKneeShift},100 L 15,152`);
+      kbFloorShadow.setAttribute('rx', `${40 - kbTorsoHinge * 0.2}`);
+
+      // ------------------------------------------------------------------------
+      // GLOBAL REPS COUNTER TICK
+      // ------------------------------------------------------------------------
+      if (Math.random() < 0.04) {
+        state.repsToday += 1;
+        globalRepsCounter.textContent = state.repsToday.toLocaleString('en-US');
+        globalRepsCounter.classList.add('tick-anim');
+        setTimeout(() => globalRepsCounter.classList.remove('tick-anim'), 160);
+      }
+
+      // Update Procedural Chalk Particles
+      updateAndRenderChalk();
+    }
+
+    // Initialize Weight Bar on load
+    updateSquatBarWeight();
+
+    // Start 60fps Loop
+    requestAnimationFrame(mainAnimationLoop);
+
+    // Initial Chalk Welcome Burst at Squat Rack
+    setTimeout(() => {
+      spawnChalkBurst(0.18, 0.56, 32);
+    }, 400);
+
+  </script>
+</body>
+</html>
